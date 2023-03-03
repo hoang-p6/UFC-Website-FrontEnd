@@ -1,4 +1,4 @@
-# **_UFC_Social_Hub_**
+# **_UFC Social Hub_**
 
 ## Date: 03/02/2023
 

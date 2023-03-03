@@ -1,4 +1,4 @@
-# **_Project Title_**
+# **_UFC_Social_Hub_**
 
 ## Date: 03/02/2023
 

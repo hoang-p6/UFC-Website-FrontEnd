@@ -16,10 +16,7 @@ This is a full stack website using POSTGRESQL, Express, React, and Node. The web
 
 ## **_Technologies Used_**
 
-- POSTGRESQL
-- Express
-- React
-- Node
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200402205611/What-is-PERN-Stack.png)
 
 ---
 

@@ -22,7 +22,7 @@ This is a full stack website using POSTGRESQL, Express, React, and Node. The web
 
 ## **_Screenshots_**
 
-![Image]()
+![Imgur](https://i.imgur.com/FrXO2id.png)
 ![image]()
 
 # **_Updates_**

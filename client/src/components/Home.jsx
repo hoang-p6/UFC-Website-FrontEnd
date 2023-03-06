@@ -1,7 +1,7 @@
 import Card from './Card'
 
 const Home = () => {
-  return <div>hi</div>
+  return <div></div>
 }
 
 export default Home

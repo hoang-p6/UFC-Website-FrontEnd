@@ -8,11 +8,15 @@ import CardDetails from './components/CardDetails'
 import { Routes, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Register from './components/Register'
+import axios from 'axios'
 
 function App() {
   const [user, setUser] = useState(null)
   //calls for card
   //calls for fight details
+  const getFights = async () => {
+    const response = await axios.get('http://localhost:3001/fights/list')
+  }
   //calls for fighters
   //call for matchup
   const handleLogout = () => {

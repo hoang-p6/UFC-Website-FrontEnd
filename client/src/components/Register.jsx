@@ -53,7 +53,7 @@ const Register = () => {
         <input
           onChange={handleChange}
           name="email"
-          type="text"
+          type="email"
           value={formValues.email}
           required
         />
@@ -69,7 +69,7 @@ const Register = () => {
         <input
           onChange={handleChange}
           name="password"
-          type="text"
+          type="password"
           value={formValues.password}
           required
         />
@@ -77,7 +77,7 @@ const Register = () => {
         <input
           onChange={handleChange}
           name="confirmPassword"
-          type="text"
+          type="password"
           value={formValues.confirmPassword}
           required
         />

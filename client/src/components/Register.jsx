@@ -41,7 +41,7 @@ const Register = () => {
           value={formValues.firstName}
           required
         />
-        <label htmlFor="lastName">First Name</label>
+        <label htmlFor="lastName">Last Name</label>
         <input
           onChange={handleChange}
           name="lastName"

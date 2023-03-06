@@ -1,5 +1,7 @@
 import './App.css'
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { CheckSession } from './services/Auth'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import CardDetails from './components/CardDetails'
@@ -8,9 +10,29 @@ import Login from './components/Login'
 import Register from './components/Register'
 
 function App() {
+  const [user, setUser] = useState(null)
+  //calls for card
+  //calls for fight details
+  //calls for fighters
+  //call for matchup
+  const handleLogout = () => {
+    setUser(null)
+    localStorage.clear()
+  }
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
   return (
     <div className="App">
-      <Nav />
+      <Nav user={user} handleLogout={handleLogout} />
       <main>
         <Routes>
           <Route path="/" element={<Home />}></Route>

@@ -5,7 +5,7 @@ import { SignInUser } from '../services/Auth'
 const Login = ({ setUser }) => {
   let navigate = useNavigate()
 
-  const initialState = { userName: '', password: '' }
+  const initialState = { email: '', password: '' }
 
   const [formValues, setFormValues] = useState(initialState)
 
@@ -18,18 +18,18 @@ const Login = ({ setUser }) => {
     const payload = await SignInUser(formValues)
     setFormValues(initialState)
     setUser(payload)
-    navigate('/home')
+    navigate('/')
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="userName">Username</label>
+        <label htmlFor="email">Email</label>
         <input
           onChange={handleChange}
-          name="UserName"
-          type="text"
-          value={formValues.userName}
+          name="email"
+          type="email"
+          value={formValues.email}
           required
         />
         <label htmlFor="password">Password</label>
@@ -40,7 +40,7 @@ const Login = ({ setUser }) => {
           value={formValues.password}
           required
         />
-        <button disabled={!formValues.userName || !formValues.password}>
+        <button disabled={!formValues.email || !formValues.password}>
           Log In
         </button>
       </form>

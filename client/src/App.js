@@ -38,7 +38,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login setUser={setUser} />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/:carddetailsid" element={<CardDetails />}></Route>
+          <Route path="/cards/:id" element={<CardDetails />}></Route>
         </Routes>
       </main>
     </div>

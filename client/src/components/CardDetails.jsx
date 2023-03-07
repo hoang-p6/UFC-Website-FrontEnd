@@ -6,18 +6,22 @@ import axios from 'axios'
 const CardDetails = ({ cards, getCards }) => {
   const { id } = useParams()
   const [thisCard, setThisCard] = useState(cards)
-  // const selectCard = () => {
-  //   setThisCard(cards.find((card) => card.id === `${id}`))
-  // }
-  const selectCard = async () => {
+  const [fighters, setFighters] = useState([])
+  const [loaded, setLoaded] = useState(false)
+  const selectCardAndFighters = async () => {
     const res = await axios.get(`http://localhost:3001/cards/${id}`)
     setThisCard(res.data[0])
+
+    const resTwo = await axios.get(`http://localhost:3001/cards/${id}/fighters`)
+    setFighters(resTwo.data.fightersOnCard)
+    setLoaded(true)
+    console.log(fighters)
   }
   useEffect(() => {
-    selectCard()
-  }, [])
+    selectCardAndFighters()
+  }, [loaded])
+  const fights = cards[id - 1].Fights
 
-  console.log(thisCard)
   return (
     <div>
       <div>
@@ -28,6 +32,13 @@ const CardDetails = ({ cards, getCards }) => {
         <h2>
           {thisCard.city}, {thisCard.country}
         </h2>
+      </div>
+      <div>
+        {fights.map((fight) => (
+          <div key={fight.id}>
+            <h1>{fight.division}</h1>
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -2,16 +2,16 @@ import { NavLink } from 'react-router-dom'
 
 const Nav = ({ user, handleLogout }) => {
   let userOptions
-  if (user) {
-    ;<nav>
+
+  return user ? (
+    <nav>
       <h3>Welcome {user.userName}!</h3>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/" onClick={handleLogout}>
         Log Out
       </NavLink>
     </nav>
-  }
-  return (
+  ) : (
     <nav>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/register">Register</NavLink>

@@ -1,7 +1,8 @@
-
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import ReviewForm from './ReviewForm'
+import { Link } from 'react-router-dom'
 
 const CardDetails = ({ cards, getCards }) => {
   const { id } = useParams()
@@ -34,22 +35,30 @@ const CardDetails = ({ cards, getCards }) => {
         </h2>
       </div>
       <div>
-        {fighters.map((fightersDetails) => (
-          <div key={fightersDetails[0].firstName}>
-            <h1>Fighter One: {fightersDetails[0][0].firstName}</h1>
-            <h1>Fighter Two: {fightersDetails[0][1].firstName}</h1>
-            <h2>Division: {fightersDetails[1]}</h2>
-            <h2>Winner: {fightersDetails[2]}</h2>
-            <h2>Fight Id: {fightersDetails[3]}</h2>
-            <h2>Card Id: {fightersDetails[4]}</h2>
-
-          </div>
-        ))}
+        <div>
+          {fighters.map((fightersDetails) => (
+            <Link to={`/fightdetails/${fightersDetails[3]}`}>
+              <div key={fightersDetails[0].firstName} className="eachFight">
+                <h1>
+                  {fightersDetails[0][0].firstName}{' '}
+                  {fightersDetails[0][0].lastName}
+                </h1>
+                <h2>VS</h2>
+                <h1>
+                  {fightersDetails[0][1].firstName}{' '}
+                  {fightersDetails[0][1].lastName}
+                </h1>
+                <h2>Division: {fightersDetails[1]}</h2>
+                <h2>Winner: {fightersDetails[2]}</h2>
+                {/* <h2>Fight Id: {fightersDetails[3]}</h2> */}
+                {/* <h2>Card Id: {fightersDetails[4]}</h2> */}
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   )
 }
 
 export default CardDetails
-
-

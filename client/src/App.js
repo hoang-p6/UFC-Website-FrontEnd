@@ -10,6 +10,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import axios from 'axios'
 import { GetCards } from './services/CardServices'
+import FightDetails from './components/FightDetails'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -49,6 +50,10 @@ function App() {
           <Route
             path="/cards/:id"
             element={<CardDetails getCards={GetCards} cards={cards} />}
+          ></Route>
+          <Route
+            path="/fightdetails/:fightid"
+            element={<FightDetails />}
           ></Route>
         </Routes>
       </main>

@@ -53,7 +53,7 @@ function App() {
             element={<CardDetails getCards={GetCards} cards={cards} />}
           ></Route>
           <Route
-            path="/fightdetails/:fightid"
+            path="/fightdetails/:fight_id"
             element={<FightDetails user={user} />}
           ></Route>
         </Routes>

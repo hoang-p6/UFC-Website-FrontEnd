@@ -33,4 +33,6 @@ const CardDetails = ({ cards, getCards }) => {
   )
 }
 
+export default CardDetails
+
 

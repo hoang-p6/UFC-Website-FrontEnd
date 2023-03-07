@@ -14,10 +14,7 @@ const Home = ({ cards }) => {
               <img src={card.image} alt="CardPicture" />
             </Link>
             <p>Date: {card.date.split('T')[0]}</p>
-            <p>Time: {card.startTime}</p>
-            <p>City: {card.city}</p>
-            <p>Country: {card.country}</p>
-            <p>Arena: {card.arena}</p>
+
 
           </div>
         </div>

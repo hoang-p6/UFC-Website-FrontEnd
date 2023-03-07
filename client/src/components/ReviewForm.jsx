@@ -25,7 +25,7 @@ const ReviewForm = () => {
           required
         />
         <label htmlFor="rating">Rating:</label>
-        <select id="rating" onChange={handleChange} value={formState.rating}>
+        <select id="rating" onChange={handleChange} value={formValues.rating}>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>

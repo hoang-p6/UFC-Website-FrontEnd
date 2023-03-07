@@ -8,13 +8,21 @@ import CardDetails from './components/CardDetails'
 import { Routes, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Register from './components/Register'
+import axios from 'axios'
+import { GetCards } from './services/CardServices'
 
 function App() {
   const [user, setUser] = useState(null)
-  //calls for card
-  //calls for fight details
-  //calls for fighters
-  //call for matchup
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {
+    const handleCards = async () => {
+      const data = await GetCards()
+      setCards(data)
+    }
+    handleCards()
+  }, [])
+
   const handleLogout = () => {
     setUser(null)
     localStorage.clear()
@@ -35,10 +43,13 @@ function App() {
       <Nav user={user} handleLogout={handleLogout} />
       <main>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home cards={cards} />}></Route>
           <Route path="/login" element={<Login setUser={setUser} />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/cards/:id" element={<CardDetails />}></Route>
+          <Route
+            path="/cards/:id"
+            element={<CardDetails getCards={GetCards} cards={cards} />}
+          ></Route>
         </Routes>
       </main>
     </div>

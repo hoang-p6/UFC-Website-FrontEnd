@@ -14,8 +14,6 @@ const Home = ({ cards }) => {
               <img src={card.image} alt="CardPicture" />
             </Link>
             <p>Date: {card.date.split('T')[0]}</p>
-
-
           </div>
         </div>
       ))}

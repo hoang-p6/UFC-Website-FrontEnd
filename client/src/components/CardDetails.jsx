@@ -48,6 +48,8 @@ const CardDetails = ({ cards, getCards }) => {
                   {fightersDetails[0][1].firstName}{' '}
                   {fightersDetails[0][1].lastName}
                 </h1>
+                <img src={fightersDetails[0][0].image} alt="fighterPicture" />
+                <img src={fightersDetails[0][1].image} alt="fighterPicture" />
                 <h2>Division: {fightersDetails[1]}</h2>
                 <h2>Winner: {fightersDetails[2]}</h2>
                 {/* <h2>Fight Id: {fightersDetails[3]}</h2> */}

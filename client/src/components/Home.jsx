@@ -18,6 +18,7 @@ const Home = ({ cards }) => {
             <p>City: {card.city}</p>
             <p>Country: {card.country}</p>
             <p>Arena: {card.arena}</p>
+
           </div>
         </div>
       ))}

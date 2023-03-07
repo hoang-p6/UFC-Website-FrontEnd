@@ -34,9 +34,15 @@ const CardDetails = ({ cards, getCards }) => {
         </h2>
       </div>
       <div>
-        {fights.map((fight) => (
-          <div key={fight.id}>
-            <h1>{fight.division}</h1>
+        {fighters.map((fightersDetails) => (
+          <div key={fightersDetails[0].firstName}>
+            <h1>Fighter One: {fightersDetails[0][0].firstName}</h1>
+            <h1>Fighter Two: {fightersDetails[0][1].firstName}</h1>
+            <h2>Division: {fightersDetails[1]}</h2>
+            <h2>Winner: {fightersDetails[2]}</h2>
+            <h2>Fight Id: {fightersDetails[3]}</h2>
+            <h2>Card Id: {fightersDetails[4]}</h2>
+
           </div>
         ))}
       </div>

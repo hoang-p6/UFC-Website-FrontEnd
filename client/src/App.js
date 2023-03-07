@@ -39,6 +39,7 @@ function App() {
       checkToken()
     }
   }, [])
+  console.log(user)
   return (
     <div className="App">
       <Nav user={user} handleLogout={handleLogout} />
@@ -53,7 +54,7 @@ function App() {
           ></Route>
           <Route
             path="/fightdetails/:fightid"
-            element={<FightDetails />}
+            element={<FightDetails user={user} />}
           ></Route>
         </Routes>
       </main>

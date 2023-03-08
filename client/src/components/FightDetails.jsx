@@ -16,17 +16,25 @@ const FightDetails = ({ user }) => {
     )
     setReviews(reviews.data)
   }
+
   const getUserName = async () => {
     const userName = await axios.get(
       `http://localhost:3001/auth/${user.id}/details`
     )
     setUserName(userName.data.userName)
   }
+
+  const deleteReview = async (review) => {
+    await axios.delete(`http://localhost:3001/reviews/${review.id}`)
+  }
+
   useEffect(() => {
     getReviews()
     getUserName()
+
   }, [loaded])
   console.log(reviews)
+
   return user ? (
     <div>
       <ReviewForm
@@ -42,6 +50,7 @@ const FightDetails = ({ user }) => {
             <h3>{review.userName}</h3>
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
+            <button onClick={() => deleteReview(review)}>Delete</button>
           </div>
         ))}
       </div>

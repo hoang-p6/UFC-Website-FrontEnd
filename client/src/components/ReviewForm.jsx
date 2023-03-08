@@ -17,13 +17,13 @@ const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
 
     setFormValues({
       ...formValues,
+      [e.target.id]: e.target.value,
       [e.target.name]: e.target.value,
       [e.target.id]: e.target.value,
       userName: userName
     })
     setLoaded(false)
   }
-  console.log(formValues)
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await axios.post(
@@ -33,10 +33,12 @@ const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
 
     setFormValues(res.data)
     setFormValues(initialState)
+
     setLoaded(true)
 
   }
   console.log(formValues)
+
   useEffect(() => {
     getUserName()
   }, [formValues])

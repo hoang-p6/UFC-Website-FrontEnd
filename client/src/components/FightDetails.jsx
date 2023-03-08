@@ -8,7 +8,8 @@ const FightDetails = ({ user }) => {
   const [userName, setUserName] = useState('')
   const [loaded, setLoaded] = useState(false)
   let { fight_id } = useParams()
-  // console.log(fight_id)
+  
+   console.log(fight_id)
 
   const getReviews = async () => {
     let reviews = await axios.get(
@@ -24,8 +25,9 @@ const FightDetails = ({ user }) => {
     setUserName(userName.data.userName)
   }
 
-  const deleteReview = async (review) => {
-    await axios.delete(`http://localhost:3001/reviews/${review.id}`)
+  const deleteReview = async () => {
+    await axios.delete(`http://localhost:3001/reviews/${reviews.id}`)
+    
   }
 
   useEffect(() => {
@@ -50,7 +52,7 @@ const FightDetails = ({ user }) => {
             <h3>{review.userName}</h3>
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
-            <button onClick={() => deleteReview(review)}>Delete</button>
+            <button onClick={() => deleteReview(review.id)}>Delete</button>
           </div>
         ))}
       </div>

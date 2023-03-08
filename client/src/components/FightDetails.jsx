@@ -6,6 +6,7 @@ import ReviewForm from './ReviewForm'
 const FightDetails = ({ user }) => {
   const [reviews, setReviews] = useState([])
   const [userName, setUserName] = useState('')
+  const [loaded, setLoaded] = useState(false)
   let { fight_id } = useParams()
   // console.log(fight_id)
 
@@ -30,7 +31,10 @@ const FightDetails = ({ user }) => {
   useEffect(() => {
     getReviews()
     getUserName()
-  }, [])
+
+  }, [loaded])
+  console.log(reviews)
+
   return user ? (
     <div>
       <ReviewForm
@@ -38,10 +42,12 @@ const FightDetails = ({ user }) => {
         user={user}
         userName={userName}
         getUserName={getUserName}
+        setLoaded={setLoaded}
       />
       <div>
         {reviews.map((review) => (
           <div key={review.id}>
+            <h3>{review.userName}</h3>
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
             <button onClick={() => deleteReview(review)}>Delete</button>

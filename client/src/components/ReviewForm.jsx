@@ -15,11 +15,11 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
   const handleChange = (e) => {
     setFormValues({
       ...formValues,
+      [e.target.id]: e.target.value,
       [e.target.name]: e.target.value,
       userName: userName
     })
   }
-  console.log(formValues)
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await axios.post(
@@ -30,14 +30,7 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
     setFormValues(res.data)
     setFormValues(initialState)
   }
-  console.log(user)
-  // const getUserName = async () => {
-  //   const userName = await axios.get(
-  //     `http://localhost:3001/auth/${user.id}/details`
-  //   )
 
-  //   console.log(userName.data.userName)
-  // }
   useEffect(() => {
     getUserName()
   }, [formValues])

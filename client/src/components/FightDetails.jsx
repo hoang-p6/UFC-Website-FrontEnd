@@ -25,7 +25,7 @@ const FightDetails = ({ user }) => {
   }
 
   const deleteReview = async (review) => {
-    await axios.delete(`http://localhost:3001/reviews/${review.id}`)
+    await axios.delete(`http://localhost:3001/reviews/${review.id}/delete`)
   }
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const FightDetails = ({ user }) => {
             <h3>{review.userName}</h3>
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
-            <button onClick={() => deleteReview(review)}>Delete</button>
+            <button className='button' onClick={() => deleteReview(review)}>Delete</button>
           </div>
         ))}
       </div>

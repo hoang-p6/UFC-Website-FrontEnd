@@ -7,6 +7,7 @@ const FightDetails = ({ user }) => {
   const [reviews, setReviews] = useState([])
   const [userName, setUserName] = useState('')
   const [loaded, setLoaded] = useState(false)
+  const [userDetails, setUserDetails] = useState({})
   let { fight_id } = useParams()
   // console.log(fight_id)
 
@@ -22,6 +23,7 @@ const FightDetails = ({ user }) => {
       `http://localhost:3001/auth/${user.id}/details`
     )
     setUserName(userName.data.userName)
+    setUserDetails(userName.data)
   }
 
   const deleteReview = async (review) => {
@@ -33,6 +35,7 @@ const FightDetails = ({ user }) => {
     getUserName()
 
   }, [loaded])
+  console.log(userDetails)
   console.log(reviews)
 
   return user ? (
@@ -50,7 +53,14 @@ const FightDetails = ({ user }) => {
             <h3>{review.userName}</h3>
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
-            <button className='button' onClick={() => deleteReview(review)}>Delete</button>
+            {review.userName === userDetails.userName &&
+              <button className='button' onClick={() => deleteReview(review)}>Delete</button>
+            }
+
+
+
+
+
           </div>
         ))}
       </div>

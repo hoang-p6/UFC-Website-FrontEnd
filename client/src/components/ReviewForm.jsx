@@ -27,7 +27,7 @@ const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await axios.post(
-      `http://localhost:3001/fights/${fight_id}/addreview`,
+      `http://localhost:3001/reviews/${fight_id}/addreview`,
       formValues
     )
 

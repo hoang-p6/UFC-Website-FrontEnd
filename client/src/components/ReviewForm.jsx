@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
+const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
   let username = userName
   const initialState = {
     review: '',
@@ -10,14 +10,18 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
     userName: '',
     fightId: parseInt(fight_id)
   }
-  console.log(username)
+
   const [formValues, setFormValues] = useState(initialState)
+
   const handleChange = (e) => {
+
     setFormValues({
       ...formValues,
       [e.target.name]: e.target.value,
+      [e.target.id]: e.target.value,
       userName: userName
     })
+    setLoaded(false)
   }
   console.log(formValues)
   const handleSubmit = async (e) => {
@@ -26,18 +30,13 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
       `http://localhost:3001/fights/${fight_id}/addreview`,
       formValues
     )
-    console.log(res.data)
+
     setFormValues(res.data)
     setFormValues(initialState)
-  }
-  console.log(user)
-  // const getUserName = async () => {
-  //   const userName = await axios.get(
-  //     `http://localhost:3001/auth/${user.id}/details`
-  //   )
+    setLoaded(true)
 
-  //   console.log(userName.data.userName)
-  // }
+  }
+  console.log(formValues)
   useEffect(() => {
     getUserName()
   }, [formValues])

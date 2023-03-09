@@ -1,11 +1,12 @@
 .App {
   text-align: center;
+  
 }
 
 img {
   object-fit: cover;
-  height: 20em;
-  width: 20em;
+  height: 30em;
+  width: 30em;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -13,6 +14,86 @@ img {
 .eachFight {
   border: 2px solid black;
 }
+
+.Title{
+  color: goldenrod;
+  font-size: 50px;
+}
+.Main-Card {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 15px;
+  padding: 10px;
+}
+.Card-main {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
+ 
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 70em;
+  height: 750px;
+}
+
+.Card-Div {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 0.1em;
+ 
+  width: 60em;
+  height: 650px;
+  border: 3rem;
+  border-color: goldenrod;
+ 
+}
+
+.Card-Title {
+  margin: 20px;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-bottom: 35px;
+  color: goldenrod;
+}
+.Nav-Bar {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  background-color: rgb(255, 0, 0);
+  height: 2em;
+  margin: 0;
+  color: goldenrod;
+  text-align: left;
+  justify-content: space-between;
+  font-size: 30px;
+}
+
+.Nav-Link {
+  color: goldenrod;
+  margin: 0px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.container-grid {
+  padding: 2em 0;
+  display: grid;
+  grid-template-rows: repeat(3);
+  grid-gap: 1em;
+  justify-content: center;
+}
+.FullBody{
+  background-color: rgb(101, 107, 112);
+
 
 
 .cardTitle {
@@ -56,4 +137,5 @@ img {
   align-items: center;
   padding: 10px;
   border: 5px solid goldenrod;
+
 }

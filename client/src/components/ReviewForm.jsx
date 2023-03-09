@@ -6,7 +6,7 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
   let username = userName
   const initialState = {
     review: '',
-    rating: 1,
+    rating: '',
     userId: user.id,
     userName: '',
     fightId: parseInt(fight_id)
@@ -30,11 +30,8 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
     console.log(res.data)
     setFormValues(res.data)
     setFormValues(initialState)
-<<<<<<< HEAD
-=======
 
     setLoaded(true)
->>>>>>> f62c3e488f0fd83c2cd7f0fc2f310081b754e283
   }
   console.log(user)
   // const getUserName = async () => {

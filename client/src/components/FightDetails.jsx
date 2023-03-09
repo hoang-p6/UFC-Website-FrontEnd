@@ -51,13 +51,9 @@ const FightDetails = ({ user }) => {
             <h3>{review.userName}</h3>
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
-<<<<<<< HEAD
-            <button onClick={() => deleteReview(review)}>Delete</button>
-=======
             <button className="button" onClick={() => deleteReview(review)}>
               Delete
             </button>
->>>>>>> f62c3e488f0fd83c2cd7f0fc2f310081b754e283
           </div>
         ))}
       </div>

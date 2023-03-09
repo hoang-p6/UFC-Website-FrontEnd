@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-
 }
 
 
@@ -12,6 +11,7 @@
 }
 
 #fullBody {
+
   background-image: linear-gradient(to right, #3f3f3f, #5f5e5f, #818081, #a5a3a4, #cbc7c8, #cbc7c8, #cbc7c8, #cbc7c8, #a5a3a4, #818081, #5f5e5f, #3f3f3f);
   font-family: 'Timmana', sans-serif;
   text-decoration: none;
@@ -20,3 +20,4 @@
 a {
   text-decoration: none;
 }
+

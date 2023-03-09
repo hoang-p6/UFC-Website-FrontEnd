@@ -67,46 +67,50 @@ const FightDetails = ({ user }) => {
   }, [loaded])
   console.log(userDetails)
   console.log(reviews)
-
+  // const name = fighterOne.firstName
+  // const firstFighter = name.toUpperCase()
+  // console.log(firstFighter)
   return user ? (
-    <div className="fightDetails">
-      <div>
-        <h1>
+    <div className="fightPage">
+      <div className="Details">
+        <h1 className="fighterNames">
           {fighterOne.firstName} {fighterOne.lastName} VS.{' '}
           {fighterTwo.firstName} {fighterTwo.lastName}
         </h1>
 
         <div className="stats-container">
           <img src={fighterOne.image} className="fighter-one-image" />
-          <ul className="fighter-one-stats">
-            <li>{fighterOne.country} </li>
-            <li>{fighterOne.wins}</li>
-            <li>{fighterOne.losses} </li>
-            <li>{fighterOne.draws}</li>
-          </ul>
-          <ul className="stats-title">
-            <li>Country </li>
-            <li>Wins</li>
-            <li>Losses</li>
-            <li>Draws</li>
-          </ul>
-          <ul className="fighter-two-stats">
-            <li>{fighterOne.country} </li>
-            <li>{fighterOne.wins}</li>
-            <li>{fighterOne.losses} </li>
-            <li>{fighterOne.draws}</li>
+
+          <div className=""></div>
+          <ul className="fighter-stats">
+            {/* ////////COUNTRY////// */}
+            {/* <li className="country-stats"> */}
+            <h1 className="country-one">{fighterOne.country}</h1>{' '}
+            <h1 className="country-label">COUNTRY</h1>{' '}
+            <h1 className="country-three">{fighterTwo.country}</h1>{' '}
+            {/* </li> */}
+            {/* ///////WINS//////// */}
+            {/* <li className="wins-stats"> */}
+            <h1 className="wins-four">{fighterOne.wins}</h1>
+            <h1 className="win-label">WINS</h1>
+            <h1 className="wins-six">{fighterTwo.wins}</h1>
+            {/* </li> */}
+            {/* ///////LOSSES//////// */}
+            {/* <li className="losses-stats"> */}
+            <h1 className="losses-seven">{fighterOne.losses}</h1>
+            <h1 className="losses-label">LOSSES</h1>
+            <h1 className="losses-nine">{fighterTwo.losses}</h1> {/* </li> */}
+            {/* ///////DRAW//////// */}
+            {/* <li className="draws-stats"> */}
+            <h1 className="draws-ten">{fighterOne.draws}</h1>
+            <h1 className="draw-label">DRAWS</h1>
+            <h1 className="draws-twelve">{fighterTwo.draws}</h1>
+            {/* </li> */}
           </ul>
           <img src={fighterTwo.image} className="fighter-two-image" />
         </div>
       </div>
-      <ReviewForm
-        fight_id={fight_id}
-        user={user}
-        userName={userName}
-        getUserName={getUserName}
-        setLoaded={setLoaded}
-      />
-      <div>
+      <div className="reviews-section">
         {reviews.map((review) => (
           <div key={review.id}>
             <h3>{review.userName}</h3>
@@ -136,6 +140,13 @@ const FightDetails = ({ user }) => {
           </div>
         ))}
       </div>
+      <ReviewForm
+        fight_id={fight_id}
+        user={user}
+        userName={userName}
+        getUserName={getUserName}
+        setLoaded={setLoaded}
+      />
     </div>
   ) : (
     <h1>Gotta be signed In</h1>

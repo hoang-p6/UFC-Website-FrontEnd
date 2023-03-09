@@ -1,3 +1,14 @@
+.fightPage {
+  font-family: 'Timmana', sans-serif;
+  color: white;
+  text-transform: uppercase;
+  /* text-shadow: black 1px 0 10px; */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.fighterNames {
+  font-size: 70px;
+}
 .container-grid {
   padding: 2em 0;
   display: grid;
@@ -5,7 +16,12 @@
   grid-gap: 1em;
   justify-content: center;
 }
-
+.fightDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .stats-container {
   display: flex;
   flex-direction: row;
@@ -24,7 +40,6 @@
   flex-direction: column;
   list-style-type: none;
   justify-content: space-between;
-  font-size: 30px;
 }
 
 .fighter-two-stats {
@@ -35,11 +50,106 @@
 }
 
 .fighter-one-image {
-  border: 5px solid black;
+  margin: 10px;
   box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
+  background-image: radial-gradient(
+    circle,
+    #ffd202,
+    #fcc900,
+    #f9c000,
+    #f5b800,
+    #f1af00,
+    #eca000,
+    #e69200,
+    #e08300,
+    #d56a00,
+    #ca5000,
+    #bd3300,
+    #af0000
+  );
+}
+.fighter-two-image {
+  margin: 10px;
+  box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
+  background-image: radial-gradient(
+    circle,
+    #ffd202,
+    #fcc900,
+    #f9c000,
+    #f5b800,
+    #f1af00,
+    #eca000,
+    #e69200,
+    #e08300,
+    #d56a00,
+    #ca5000,
+    #bd3300,
+    #af0000
+  );
+}
+.fighter-stats {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border: 5px solid black; */
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-areas:
+    ' one two three'
+    ' four five six'
+    'seven eight nine'
+    'ten eleven twelve';
+  list-style: none;
+}
+.country-one {
+  grid-area: one;
+  display: flex;
+  flex-wrap: wrap;
+}
+.country-label {
+  grid-area: two;
+}
+.country-three {
+  grid-area: three;
 }
 
-.fighter-two-image {
-  border: 5px solid black;
-  box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
+.wins-four {
+  grid-area: four;
+}
+.wins-label {
+  grid-area: five;
+}
+.wins-six {
+  grid-area: six;
+}
+
+.losses-seven {
+  grid-area: seven;
+}
+.losses-label {
+  grid-area: eight;
+}
+.losses-nine {
+  grid-area: nine;
+}
+.draws-ten {
+  grid-area: ten;
+}
+.draws-label {
+  grid-area: eleven;
+}
+.draws-twelve {
+  grid-area: twelve;
+}
+.stats {
+  display: flex;
+  justify-content: center;
+}
+.country {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  padding: 15px;
 }

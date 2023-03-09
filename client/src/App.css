@@ -11,6 +11,61 @@ img {
   margin-bottom: 10px;
 }
 
+body {
+  background-image: radial-gradient(
+    circle,
+    #c2c2c2,
+    #afafaf,
+    #9c9c9c,
+    #8a8a8a,
+    #787878,
+    #6d6d6d,
+    #626262,
+    #575757,
+    #4f4f4f,
+    #484848,
+    #404040,
+    #393939
+  );
+  height: 1000px;
+}
+.eachFight {
+  border: 2px solid black;
+}
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.fighter-one-stats {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.stats-title {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: space-between;
+  font-size: 30px;
+}
+.fighter-two-stats {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.fighter-one-image {
+  border: 5px solid black;
+  box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
+}
+.fighter-two-image {
+  border: 5px solid black;
+  box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
+}
+
+
 .eachFight {
   border: 2px solid black;
 }
@@ -139,3 +194,4 @@ img {
   border: 5px solid goldenrod;
 
 }
+

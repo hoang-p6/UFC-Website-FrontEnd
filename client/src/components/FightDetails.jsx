@@ -68,12 +68,36 @@ const FightDetails = ({ user }) => {
   console.log(reviews)
 
   return user ? (
-    <div>
-      <h1>
-        {fighterOne.firstName} {fighterOne.lastName} VS. {fighterTwo.firstName}{' '}
-        {fighterTwo.lastName}
-      </h1>
+    <div className="fightDetails">
+      <div>
+        <h1>
+          {fighterOne.firstName} {fighterOne.lastName} VS.{' '}
+          {fighterTwo.firstName} {fighterTwo.lastName}
+        </h1>
 
+        <div className="stats-container">
+          <img src={fighterOne.image} className="fighter-one-image" />
+          <ul className="fighter-one-stats">
+            <li>{fighterOne.country} </li>
+            <li>{fighterOne.wins}</li>
+            <li>{fighterOne.losses} </li>
+            <li>{fighterOne.draws}</li>
+          </ul>
+          <ul className="stats-title">
+            <li>Country </li>
+            <li>Wins</li>
+            <li>Losses</li>
+            <li>Draws</li>
+          </ul>
+          <ul className="fighter-two-stats">
+            <li>{fighterOne.country} </li>
+            <li>{fighterOne.wins}</li>
+            <li>{fighterOne.losses} </li>
+            <li>{fighterOne.draws}</li>
+          </ul>
+          <img src={fighterTwo.image} className="fighter-two-image" />
+        </div>
+      </div>
       <ReviewForm
         fight_id={fight_id}
         user={user}
@@ -88,18 +112,26 @@ const FightDetails = ({ user }) => {
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
 
-
-            {(review.userName === userDetails.userName && !displayUpdate) &&
-              <div className='userButtons'>
-                <button className='button' onClick={() => deleteReview(review)}>Delete</button>
-                <button onClick={() => displayUpdateForm(review.id)}>Update Review</button>
-
+            {review.userName === userDetails.userName && !displayUpdate && (
+              <div className="userButtons">
+                <button className="button" onClick={() => deleteReview(review)}>
+                  Delete
+                </button>
+                <button onClick={() => displayUpdateForm(review.id)}>
+                  Update Review
+                </button>
               </div>
-            }
-            {(displayUpdate && review.id === reviewId) &&
-              <UpdateReviewForm userDetails={userDetails} reviews={reviews} reviewId={reviewId} setLoaded={setLoaded} setDisplayUpdate={setDisplayUpdate} review={review.review} />
-            }
-
+            )}
+            {displayUpdate && review.id === reviewId && (
+              <UpdateReviewForm
+                userDetails={userDetails}
+                reviews={reviews}
+                reviewId={reviewId}
+                setLoaded={setLoaded}
+                setDisplayUpdate={setDisplayUpdate}
+                review={review.review}
+              />
+            )}
           </div>
         ))}
       </div>

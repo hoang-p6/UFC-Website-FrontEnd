@@ -33,11 +33,6 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
 
     //setLoaded(true)
   }
-  console.log(user)
-  // const getUserName = async () => {
-  //   const userName = await axios.get(
-  //     `http://localhost:3001/auth/${user.id}/details`
-  //   )
 
   //   console.log(userName.data.userName)
   // }

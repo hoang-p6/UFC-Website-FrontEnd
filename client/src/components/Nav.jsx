@@ -1,28 +1,30 @@
 import { NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
-const Nav = ({ user, handleLogout }) => {
+const Nav = ({ user, handleLogout, userDetails, checkToken }) => {
   let userOptions
 
-  return user ? (
-    <nav className='Nav-Bar'>
-      <div className='Nav-Bar'>
 
-      <h3>Welcome {user.userName}!</h3>
-      </div>
-       
-      <NavLink className="Nav-Bar" to="/">Home</NavLink>
-        
-      <NavLink className="Nav-Bar" to="/" onClick={handleLogout}>
+
+
+
+  return user ? (
+    <nav>
+      <h3>Welcome {userDetails}!</h3>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/" onClick={handleLogout}>
         Log Out
       </NavLink>
+      {user.id === 3 &&
+        <NavLink to="/admincontrols">Admin Controls</NavLink>}
     </nav>
   ) : (
-    <nav className='Nav-Bar'>
-      <NavLink className="Nav-Bar" to="/">Home</NavLink>
-      
-      <NavLink className="Nav-Bar" to="/register">Register</NavLink>
+    <nav>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/register">Register</NavLink>
+      <NavLink to="/login">Login</NavLink>
 
-      <NavLink className="Nav-Bar" to="/login">Login</NavLink>
     </nav>
   )
 }

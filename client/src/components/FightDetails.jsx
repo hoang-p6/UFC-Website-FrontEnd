@@ -10,9 +10,22 @@ const FightDetails = ({ user }) => {
   const [userName, setUserName] = useState('')
   const [loaded, setLoaded] = useState(false)
   const [userDetails, setUserDetails] = useState({})
+  const [reviewId, setReviewId] = useState(1)
   let { fight_id } = useParams()
   const [displayUpdate, setDisplayUpdate] = useState(false)
-  // console.log(fight_id)
+  const [fightersCards, setFightersCards] = useState('')
+  const [fighterOne, setFighterOne] = useState('')
+  const [fighterTwo, setFighterTwo] = useState('')
+  const getFightInfo = async () => {
+    const res = await axios.get(
+      `http://localhost:3001/fights/${fight_id}/fighters`
+    )
+    setFighterOne(res.data[0])
+    setFighterTwo(res.data[1])
+  }
+  console.log(fighterOne, fighterTwo)
+  // console.log(fightersCards[0].firstName)
+  // console.log(fightersCards[0].firstName, fightersCards[0].lastName)
 
   const getReviews = async () => {
     let reviews = await axios.get(
@@ -33,23 +46,34 @@ const FightDetails = ({ user }) => {
   const deleteReview = async (review) => {
     await Client.delete(`http://localhost:3001/reviews/${review.id}/delete`)
     setLoaded(true)
-
   }
 
-  const displayUpdateForm = async () => {
+  const displayUpdateForm = async (reviewId) => {
+    setReviewId(reviewId)
     setDisplayUpdate(true)
   }
 
+  const updateReview = async (e, review) => {
+    e.preventDefault()
+    const res = await Client.put(
+      `http://localhost:3001/reviews/${review.id}/update`
+    )
+  }
   useEffect(() => {
     getReviews()
     getUserName()
-
+    getFightInfo()
   }, [loaded])
   console.log(userDetails)
   console.log(reviews)
 
   return user ? (
     <div>
+      <h1>
+        {fighterOne.firstName} {fighterOne.lastName} VS. {fighterTwo.firstName}{' '}
+        {fighterTwo.lastName}
+      </h1>
+
       <ReviewForm
         fight_id={fight_id}
         user={user}
@@ -64,15 +88,18 @@ const FightDetails = ({ user }) => {
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
 
-            {review.userName === userDetails.userName &&
+
+            {(review.userName === userDetails.userName && !displayUpdate) &&
               <div className='userButtons'>
                 <button className='button' onClick={() => deleteReview(review)}>Delete</button>
-                <button onClick={() => displayUpdateForm()}>Update Review</button>
+                <button onClick={() => displayUpdateForm(review.id)}>Update Review</button>
+
               </div>
             }
-            {displayUpdate &&
-              <UpdateReviewForm />
+            {(displayUpdate && review.id === reviewId) &&
+              <UpdateReviewForm userDetails={userDetails} reviews={reviews} reviewId={reviewId} setLoaded={setLoaded} setDisplayUpdate={setDisplayUpdate} review={review.review} />
             }
+
           </div>
         ))}
       </div>

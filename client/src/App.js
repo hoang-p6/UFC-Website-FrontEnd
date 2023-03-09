@@ -11,18 +11,13 @@ import Register from './components/Register'
 import axios from 'axios'
 import { GetCards } from './services/CardServices'
 import FightDetails from './components/FightDetails'
+import AdminControls from './components/AdminControls'
 
 function App() {
   const [user, setUser] = useState(null)
   const [cards, setCards] = useState([])
-
-  useEffect(() => {
-    const handleCards = async () => {
-      const data = await GetCards()
-      setCards(data)
-    }
-    handleCards()
-  }, [])
+  const [reviews, setReviews] = useState([])
+  const [userDetails, setUserDetails] = useState('')
 
   const handleLogout = () => {
     setUser(null)
@@ -31,18 +26,29 @@ function App() {
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
+
   }
+  const handleCards = async () => {
+    const data = await GetCards()
+    setCards(data)
+  }
+
+
 
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
+    handleCards()
+
+
+
   }, [])
-  console.log(user)
+
   return (
     <div className="App">
-      <Nav user={user} handleLogout={handleLogout} />
+      <Nav user={user} handleLogout={handleLogout} userDetails={userDetails.data} checkToken={checkToken} />
       <main>
         <Routes>
           <Route path="/" element={<Home cards={cards} />}></Route>
@@ -56,6 +62,7 @@ function App() {
             path="/fightdetails/:fight_id"
             element={<FightDetails user={user} />}
           ></Route>
+          <Route path='/admincontrols' element={<AdminControls user={user} />}></Route>
         </Routes>
       </main>
     </div>

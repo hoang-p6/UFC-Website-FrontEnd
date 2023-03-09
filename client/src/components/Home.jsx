@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = ({ cards }) => {
-  console.log(cards)
+  
   return (
+    <section className='container-grid'>
     <div className="Main-Card">
       <h1 className="Title">UFC HUB</h1>
       {cards.map((card) => (
@@ -14,11 +15,12 @@ const Home = ({ cards }) => {
             <Link to={`/cards/${card.id}`}>
               <img src={card.image} alt="CardPicture" />
             </Link>
-            <p>Date: {card.date.split('T')[0]}</p>
+            <p className="Card-Title">Date: {card.date.split('T')[0]}</p>
           </div>
         </div>
       ))}
     </div>
+    </section>
   )
 }
 

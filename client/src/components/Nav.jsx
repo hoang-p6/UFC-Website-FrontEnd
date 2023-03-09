@@ -10,23 +10,26 @@ const Nav = ({ user, handleLogout, userDetails, checkToken }) => {
 
 
   return user ? (
-    <nav>
+    <nav className='Nav-Bar'>
+      
+
       <h3>Welcome {userDetails}!</h3>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/" onClick={handleLogout}>
+      <NavLink className='Nav-Bar' to="/">Home</NavLink>
+      <NavLink className='Nav-Bar' to="/" onClick={handleLogout}>
         Log Out
       </NavLink>
       {user.id === 3 &&
         <NavLink to="/admincontrols">Admin Controls</NavLink>}
     </nav>
   ) : (
-    <nav>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/register">Register</NavLink>
-      <NavLink to="/login">Login</NavLink>
+    <nav className='Nav-Bar'>
+      <NavLink className='Nav-Bar' to="/">Home</NavLink>
+      <NavLink className='Nav-Bar' to="/register">Register</NavLink>
+      <NavLink className='Nav-Bar' to="/login">Login</NavLink>
 
     </nav>
   )
 }
+ 
 
 export default Nav

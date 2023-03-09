@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import ReviewForm from './ReviewForm'
 import UpdateReviewForm from './UpdateReviewForm'
 import Client from '../services/api'
+import '../styles/FightDetails.css'
 
 const FightDetails = ({ user }) => {
   const [reviews, setReviews] = useState([])

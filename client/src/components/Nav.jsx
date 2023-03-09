@@ -1,46 +1,51 @@
 import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import '../styles/Nav.css'
 
 const Nav = ({ user, handleLogout, checkToken }) => {
   let userOptions
 
-  const [userDetails, setUserDetails] = useState({})
+  // const [userDetails, setUserDetails] = useState({})
 
-  const getUserName = async () => {
-    const userId = user.id
+  // const getUserName = async () => {
+  //   const userId = user.id
 
-    const userStuff = await axios.get(
-      `http://localhost:3001/auth/${userId}/details`
-    )
-    setUserDetails(userStuff)
-  }
+  //   const userStuff = await axios.get(`http://localhost:3001/auth/${userId}/details`)
+  //   setUserDetails(userStuff)
 
-  useEffect(() => {
-    getUserName()
-  }, [user])
+  // }
+  // console.log('HERE')
+  // console.log(userDetails)
+
+  // useEffect(() => {
+  //   getUserName()
+  // }, [user])
 
   return user ? (
     <nav className="Nav-Bar">
-      <h3>Welcome {userDetails}!</h3>
-      <NavLink className="Nav-Bar" to="/">
+      <NavLink to="/" className="Nav-Bar">
         Home
       </NavLink>
-      <NavLink className="Nav-Bar" to="/" onClick={handleLogout}>
+      <NavLink to="/" onClick={handleLogout} className="Nav-Bar">
         Log Out
       </NavLink>
-      {user.id === 3 && <NavLink to="/admincontrols">Admin Controls</NavLink>}
-      <h3>Welcome {userDetails.data.userName}!</h3>
+      {user.id === 1 && (
+        <NavLink to="/admincontrols" className="Nav-Bar">
+          Admin Controls
+        </NavLink>
+      )}
+      {/* <h3>Welcome {userDetails.data.userName}!</h3> */}
     </nav>
   ) : (
     <nav className="Nav-Bar">
-      <NavLink className="Nav-Bar" to="/">
+      <NavLink to="/" className="Nav-Bar">
         Home
       </NavLink>
-      <NavLink className="Nav-Bar" to="/register">
+      <NavLink to="/register" className="Nav-Bar">
         Register
       </NavLink>
-      <NavLink className="Nav-Bar" to="/login">
+      <NavLink to="/login" className="Nav-Bar">
         Login
       </NavLink>
     </nav>

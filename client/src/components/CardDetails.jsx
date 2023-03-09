@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import ReviewForm from './ReviewForm'
 import { Link } from 'react-router-dom'
+import '../styles/CardDetails.css'
 
 const CardDetails = ({ cards, getCards }) => {
   const { id } = useParams()
@@ -20,8 +21,8 @@ const CardDetails = ({ cards, getCards }) => {
   useEffect(() => {
     selectCardAndFighters()
   }, [loaded])
-  const fights = cards[id - 1].Fights
-  // console.log(id)
+
+
   return (
     <div className='fightsAndDetails'>
       <div className='fightDetails'>

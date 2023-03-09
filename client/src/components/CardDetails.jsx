@@ -21,7 +21,7 @@ const CardDetails = ({ cards, getCards }) => {
     selectCardAndFighters()
   }, [loaded])
   const fights = cards[id - 1].Fights
-
+  // console.log(id)
   return (
     <div>
       <div>

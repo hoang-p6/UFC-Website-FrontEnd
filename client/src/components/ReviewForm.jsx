@@ -31,7 +31,7 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
     setFormValues(res.data)
     setFormValues(initialState)
 
-    setLoaded(true)
+    //setLoaded(true)
   }
   console.log(user)
   // const getUserName = async () => {

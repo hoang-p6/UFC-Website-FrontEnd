@@ -2,33 +2,22 @@
   text-align: center;
 }
 
-img {
-  object-fit: cover;
-  height: 20em;
-  width: 20em;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
+
 
 .eachFight {
   border: 2px solid black;
   width: 60vw;
+  text-decoration: none;
 }
 
 #fullBody {
-  background-image: linear-gradient(
-    to right,
-    #3f3f3f,
-    #5f5e5f,
-    #818081,
-    #a5a3a4,
-    #cbc7c8,
-    #cbc7c8,
-    #cbc7c8,
-    #cbc7c8,
-    #a5a3a4,
-    #818081,
-    #5f5e5f,
-    #3f3f3f
-  );
+
+  background-image: linear-gradient(to right, #3f3f3f, #5f5e5f, #818081, #a5a3a4, #cbc7c8, #cbc7c8, #cbc7c8, #cbc7c8, #a5a3a4, #818081, #5f5e5f, #3f3f3f);
+  font-family: 'Timmana', sans-serif;
+  text-decoration: none;
 }
+
+a {
+  text-decoration: none;
+}
+

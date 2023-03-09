@@ -23,14 +23,9 @@ const Nav = ({ user, handleLogout, checkToken }) => {
   }, [user])
 
   return user ? (
-
-    <nav className='Nav-Bar'>
-      
-
-      <h3>Welcome {userDetails}!</h3>
-      <NavLink className='Nav-Bar' to="/">Home</NavLink>
-      <NavLink className='Nav-Bar' to="/" onClick={handleLogout}>
-
+    <nav>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/" onClick={handleLogout}>
         Log Out
       </NavLink>
       {user.id === 3 &&
@@ -38,14 +33,13 @@ const Nav = ({ user, handleLogout, checkToken }) => {
       <h3>Welcome {userDetails.data.userName}!</h3>
     </nav>
   ) : (
-    <nav className='Nav-Bar'>
-      <NavLink className='Nav-Bar' to="/">Home</NavLink>
-      <NavLink className='Nav-Bar' to="/register">Register</NavLink>
-      <NavLink className='Nav-Bar' to="/login">Login</NavLink>
+    <nav>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/register">Register</NavLink>
+      <NavLink to="/login">Login</NavLink>
 
     </nav>
   )
 }
- 
 
 export default Nav

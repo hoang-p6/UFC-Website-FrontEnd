@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-
+  <<<<<<< HEAD=======>>>>>>>7f268358f0087b5494e4994b1216ef25fb669d75
 }
 
 img {
   object-fit: cover;
-  height: 30em;
-  width: 30em;
+  height: 20em;
+  width: 20em;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -203,5 +203,4 @@ body {
   align-items: center;
   padding: 10px;
   border: 5px solid goldenrod;
-
 }

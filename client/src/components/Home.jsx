@@ -13,7 +13,7 @@ const Home = ({ cards }) => {
             <div className="Card-Div">
               <h2 className="Card-Title">{card.title}</h2>
               <Link to={`/cards/${card.id}`}>
-                <img src={card.image} alt="CardPicture" />
+                <img src={card.image} alt="CardPicture" className='mainImage' />
               </Link>
               <p className="Card-Title">Date: {card.date.split('T')[0]}</p>
             </div>

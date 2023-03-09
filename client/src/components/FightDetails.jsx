@@ -69,11 +69,26 @@ const FightDetails = ({ user }) => {
 
   return user ? (
     <div>
-      <h1>
-        {fighterOne.firstName} {fighterOne.lastName} VS. {fighterTwo.firstName}{' '}
-        {fighterTwo.lastName}
-      </h1>
-
+      <div className="fighter-stats">
+        <h1>
+          {fighterOne.firstName} {fighterOne.lastName} VS.{' '}
+          {fighterTwo.firstName} {fighterTwo.lastName}
+        </h1>
+        <h3>
+          {fighterOne.country} Country {fighterTwo.country}
+        </h3>
+        <h3>
+          {fighterOne.wins} Wins {fighterTwo.wins}
+        </h3>
+        <h3>
+          {fighterOne.losses} Losses {fighterTwo.losses}
+        </h3>
+        <h3>
+          {fighterOne.draws} Draws {fighterTwo.draws}
+        </h3>
+        <img src={fighterOne.image} className="fighter-one-image" />
+        <img src={fighterTwo.image} className="fighter-two-image" />
+      </div>
       <ReviewForm
         fight_id={fight_id}
         user={user}
@@ -88,18 +103,26 @@ const FightDetails = ({ user }) => {
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
 
-
-            {(review.userName === userDetails.userName && !displayUpdate) &&
-              <div className='userButtons'>
-                <button className='button' onClick={() => deleteReview(review)}>Delete</button>
-                <button onClick={() => displayUpdateForm(review.id)}>Update Review</button>
-
+            {review.userName === userDetails.userName && !displayUpdate && (
+              <div className="userButtons">
+                <button className="button" onClick={() => deleteReview(review)}>
+                  Delete
+                </button>
+                <button onClick={() => displayUpdateForm(review.id)}>
+                  Update Review
+                </button>
               </div>
-            }
-            {(displayUpdate && review.id === reviewId) &&
-              <UpdateReviewForm userDetails={userDetails} reviews={reviews} reviewId={reviewId} setLoaded={setLoaded} setDisplayUpdate={setDisplayUpdate} review={review.review} />
-            }
-
+            )}
+            {displayUpdate && review.id === reviewId && (
+              <UpdateReviewForm
+                userDetails={userDetails}
+                reviews={reviews}
+                reviewId={reviewId}
+                setLoaded={setLoaded}
+                setDisplayUpdate={setDisplayUpdate}
+                review={review.review}
+              />
+            )}
           </div>
         ))}
       </div>

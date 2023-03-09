@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ReviewForm from './ReviewForm'
+import Client from '../services/api'
 
 const FightDetails = ({ user }) => {
   const [reviews, setReviews] = useState([])
@@ -25,13 +26,12 @@ const FightDetails = ({ user }) => {
   }
 
   const deleteReview = async (review) => {
-    await axios.delete(`http://localhost:3001/reviews/${review.id}/delete`)
+    await Client.delete(`http://localhost:3001/reviews/${review.id}/delete`)
   }
 
   useEffect(() => {
     getReviews()
     getUserName()
-
   }, [loaded])
   console.log(reviews)
 
@@ -50,7 +50,9 @@ const FightDetails = ({ user }) => {
             <h3>{review.userName}</h3>
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
-            <button className='button' onClick={() => deleteReview(review)}>Delete</button>
+            <button className="button" onClick={() => deleteReview(review)}>
+              Delete
+            </button>
           </div>
         ))}
       </div>

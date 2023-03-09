@@ -1,14 +1,7 @@
 .eachFight {
+
   border: 2px solid black;
-}
 
-
-.cardTitle {
-  font-family: 'Timmana', sans-serif;
-}
-
-.cardDetails {
-  font-family: 'Timmana', sans-serif;
 }
 
 .fightDetails {
@@ -20,7 +13,7 @@
   border: 10px solid goldenrod;
   border-radius: 5px;
   width: 40vw;
-
+  box-shadow: grey 5px 5px;
 }
 
 .fightsAndDetails {
@@ -28,6 +21,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  text-decoration: none;
+  gap: 10px;
 }
 
 .imageMatch {
@@ -35,5 +30,52 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  border: 5px solid goldenrod;
+
+  gap: 40px;
+}
+
+.matchup {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+}
+
+.vs {
+  color: rgb(158, 17, 17);
+}
+
+.names {
+  color: black;
+}
+
+.cardImage {
+  object-fit: cover;
+  height: 20em;
+  width: 20em;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.fighterPicture {
+  object-fit: cover;
+  height: 20em;
+  width: 20em;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: grey 5px 5px;
+}
+
+.eachFight:hover {
+  background: rgb(192, 150, 11);
+}
+
+.fightsOnCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.divisionWinner {
+  color: black;
 }

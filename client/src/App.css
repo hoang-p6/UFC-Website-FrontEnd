@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 img {
@@ -65,12 +64,11 @@ body {
   box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
 }
 
-
 .eachFight {
   border: 2px solid black;
 }
 
-.Title{
+.Title {
   color: goldenrod;
   font-size: 50px;
 }
@@ -90,7 +88,7 @@ body {
   align-content: center;
   justify-content: center;
   flex-direction: row;
- 
+
   margin: 15px;
   padding: 10px;
   border-radius: 10px;
@@ -105,12 +103,11 @@ body {
   justify-content: center;
   flex-direction: column;
   line-height: 0.1em;
- 
+
   width: 60em;
   height: 650px;
   border: 3rem;
   border-color: goldenrod;
- 
 }
 
 .Card-Title {
@@ -146,10 +143,9 @@ body {
   grid-gap: 1em;
   justify-content: center;
 }
-.FullBody{
+.FullBody {
   background-color: rgb(101, 107, 112);
-
-
+}
 
 .cardTitle {
   font-family: 'Timmana', sans-serif;
@@ -168,7 +164,6 @@ body {
   border: 10px solid goldenrod;
   border-radius: 5px;
   width: 40vw;
-
 }
 
 .fightsAndDetails {
@@ -179,7 +174,21 @@ body {
 }
 
 #fullBody {
-  background-image: linear-gradient(to right, #3f3f3f, #5f5e5f, #818081, #a5a3a4, #cbc7c8, #cbc7c8, #cbc7c8, #cbc7c8, #a5a3a4, #818081, #5f5e5f, #3f3f3f);
+  background-image: linear-gradient(
+    to right,
+    #3f3f3f,
+    #5f5e5f,
+    #818081,
+    #a5a3a4,
+    #cbc7c8,
+    #cbc7c8,
+    #cbc7c8,
+    #cbc7c8,
+    #a5a3a4,
+    #818081,
+    #5f5e5f,
+    #3f3f3f
+  );
 }
 
 .eachFight {
@@ -192,6 +201,4 @@ body {
   align-items: center;
   padding: 10px;
   border: 5px solid goldenrod;
-
 }
-

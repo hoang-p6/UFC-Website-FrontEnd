@@ -2,13 +2,16 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ReviewForm from './ReviewForm'
+import UpdateReviewForm from './UpdateReviewForm'
 import Client from '../services/api'
 
 const FightDetails = ({ user }) => {
   const [reviews, setReviews] = useState([])
   const [userName, setUserName] = useState('')
   const [loaded, setLoaded] = useState(false)
+  const [userDetails, setUserDetails] = useState({})
   let { fight_id } = useParams()
+  const [displayUpdate, setDisplayUpdate] = useState(false)
   // console.log(fight_id)
 
   const getReviews = async () => {
@@ -16,6 +19,7 @@ const FightDetails = ({ user }) => {
       `http://localhost:3001/fights/${fight_id}/reviews`
     )
     setReviews(reviews.data)
+    setLoaded(false)
   }
 
   const getUserName = async () => {
@@ -23,16 +27,25 @@ const FightDetails = ({ user }) => {
       `http://localhost:3001/auth/${user.id}/details`
     )
     setUserName(userName.data.userName)
+    setUserDetails(userName.data)
   }
 
   const deleteReview = async (review) => {
     await Client.delete(`http://localhost:3001/reviews/${review.id}/delete`)
+    setLoaded(true)
+
+  }
+
+  const displayUpdateForm = async () => {
+    setDisplayUpdate(true)
   }
 
   useEffect(() => {
     getReviews()
     getUserName()
+
   }, [loaded])
+  console.log(userDetails)
   console.log(reviews)
 
   return user ? (
@@ -50,9 +63,16 @@ const FightDetails = ({ user }) => {
             <h3>{review.userName}</h3>
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
-            <button className="button" onClick={() => deleteReview(review)}>
-              Delete
-            </button>
+
+            {review.userName === userDetails.userName &&
+              <div className='userButtons'>
+                <button className='button' onClick={() => deleteReview(review)}>Delete</button>
+                <button onClick={() => displayUpdateForm()}>Update Review</button>
+              </div>
+            }
+            {displayUpdate &&
+              <UpdateReviewForm />
+            }
           </div>
         ))}
       </div>

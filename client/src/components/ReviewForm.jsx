@@ -2,42 +2,40 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Client from '../services/api'
 
-const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
+const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
   let username = userName
   const initialState = {
     review: '',
-    rating: 1,
+    rating: [1],
     userId: user.id,
     userName: '',
     fightId: parseInt(fight_id)
   }
-
+  console.log(username)
   const [formValues, setFormValues] = useState(initialState)
-
   const handleChange = (e) => {
     setFormValues({
       ...formValues,
-      [e.target.id]: e.target.value,
       [e.target.name]: e.target.value,
-      [e.target.id]: e.target.value,
       userName: userName
     })
-    setLoaded(false)
   }
+  console.log(formValues)
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await Client.post(
       `http://localhost:3001/reviews/${fight_id}/addreview`,
       formValues
     )
-
+    console.log(res.data)
     setFormValues(res.data)
     setFormValues(initialState)
 
-    setLoaded(true)
+    //setLoaded(true)
   }
-  console.log(formValues)
 
+  //   console.log(userName.data.userName)
+  // }
   useEffect(() => {
     getUserName()
   }, [formValues])

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterUser } from '../services/Auth'
-
+import { Link } from 'react-router-dom'
 const Register = () => {
   let navigate = useNavigate()
   const initialState = {
@@ -81,6 +81,8 @@ const Register = () => {
           value={formValues.confirmPassword}
           required
         />
+        <Link to={`/login`}>
+              
         <button
           disabled={
             !formValues.userName ||
@@ -90,6 +92,7 @@ const Register = () => {
         >
           Create Account
         </button>
+        </Link>
       </form>
     </div>
   )

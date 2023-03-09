@@ -71,10 +71,7 @@ const FightDetails = ({ user }) => {
         {fighterOne.firstName} {fighterOne.lastName} VS. {fighterTwo.firstName}{' '}
         {fighterTwo.lastName}
       </h1>
-      {/* <h1>VS.</h1>
-      <h1>
-        {fighterTwo.firstName} {fighterTwo.lastName}
-      </h1> */}
+
       <ReviewForm
         fight_id={fight_id}
         user={user}

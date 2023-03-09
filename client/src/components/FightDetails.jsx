@@ -10,6 +10,7 @@ const FightDetails = ({ user }) => {
   const [userName, setUserName] = useState('')
   const [loaded, setLoaded] = useState(false)
   const [userDetails, setUserDetails] = useState({})
+  const [reviewId, setReviewId] = useState(1)
   let { fight_id } = useParams()
   const [displayUpdate, setDisplayUpdate] = useState(false)
   const [fightersCards, setFightersCards] = useState('')
@@ -47,7 +48,8 @@ const FightDetails = ({ user }) => {
     setLoaded(true)
   }
 
-  const displayUpdateForm = async () => {
+  const displayUpdateForm = async (reviewId) => {
+    setReviewId(reviewId)
     setDisplayUpdate(true)
   }
 
@@ -86,17 +88,18 @@ const FightDetails = ({ user }) => {
             <h3>{review.review}</h3>
             <h3>{review.rating}</h3>
 
-            {review.userName === userDetails.userName && (
-              <div className="userButtons">
-                <button className="button" onClick={() => deleteReview(review)}>
-                  Delete
-                </button>
-                <button onClick={() => displayUpdateForm()}>
-                  Update Review
-                </button>
+
+            {(review.userName === userDetails.userName && !displayUpdate) &&
+              <div className='userButtons'>
+                <button className='button' onClick={() => deleteReview(review)}>Delete</button>
+                <button onClick={() => displayUpdateForm(review.id)}>Update Review</button>
+
               </div>
-            )}
-            {displayUpdate && <UpdateReviewForm />}
+            }
+            {(displayUpdate && review.id === reviewId) &&
+              <UpdateReviewForm userDetails={userDetails} reviews={reviews} reviewId={reviewId} setLoaded={setLoaded} setDisplayUpdate={setDisplayUpdate} review={review.review} />
+            }
+
           </div>
         ))}
       </div>

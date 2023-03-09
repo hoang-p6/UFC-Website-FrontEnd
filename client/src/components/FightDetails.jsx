@@ -58,11 +58,6 @@ const FightDetails = ({ user }) => {
             {review.userName === userDetails.userName &&
               <button className='button' onClick={() => deleteReview(review)}>Delete</button>
             }
-
-
-
-
-
           </div>
         ))}
       </div>

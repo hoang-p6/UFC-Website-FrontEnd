@@ -16,7 +16,7 @@ const Nav = ({ user, handleLogout, userDetails, checkToken }) => {
       <NavLink to="/" onClick={handleLogout}>
         Log Out
       </NavLink>
-      {user.id === 3 &&
+      {user.id === 1 &&
         <NavLink to="/admincontrols">Admin Controls</NavLink>}
     </nav>
   ) : (

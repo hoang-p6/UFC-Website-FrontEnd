@@ -68,26 +68,35 @@ const FightDetails = ({ user }) => {
   console.log(reviews)
 
   return user ? (
-    <div>
-      <div className="fighter-stats">
+    <div className="fightDetails">
+      <div>
         <h1>
           {fighterOne.firstName} {fighterOne.lastName} VS.{' '}
           {fighterTwo.firstName} {fighterTwo.lastName}
         </h1>
-        <h3>
-          {fighterOne.country} Country {fighterTwo.country}
-        </h3>
-        <h3>
-          {fighterOne.wins} Wins {fighterTwo.wins}
-        </h3>
-        <h3>
-          {fighterOne.losses} Losses {fighterTwo.losses}
-        </h3>
-        <h3>
-          {fighterOne.draws} Draws {fighterTwo.draws}
-        </h3>
-        <img src={fighterOne.image} className="fighter-one-image" />
-        <img src={fighterTwo.image} className="fighter-two-image" />
+
+        <div className="stats-container">
+          <img src={fighterOne.image} className="fighter-one-image" />
+          <ul className="fighter-one-stats">
+            <li>{fighterOne.country} </li>
+            <li>{fighterOne.wins}</li>
+            <li>{fighterOne.losses} </li>
+            <li>{fighterOne.draws}</li>
+          </ul>
+          <ul className="stats-title">
+            <li>Country </li>
+            <li>Wins</li>
+            <li>Losses</li>
+            <li>Draws</li>
+          </ul>
+          <ul className="fighter-two-stats">
+            <li>{fighterOne.country} </li>
+            <li>{fighterOne.wins}</li>
+            <li>{fighterOne.losses} </li>
+            <li>{fighterOne.draws}</li>
+          </ul>
+          <img src={fighterTwo.image} className="fighter-two-image" />
+        </div>
       </div>
       <ReviewForm
         fight_id={fight_id}

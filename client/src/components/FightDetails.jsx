@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ReviewForm from './ReviewForm'
+import UpdateReviewForm from './UpdateReviewForm'
 import Client from '../services/api'
 
 const FightDetails = ({ user }) => {
@@ -10,6 +11,7 @@ const FightDetails = ({ user }) => {
   const [loaded, setLoaded] = useState(false)
   const [userDetails, setUserDetails] = useState({})
   let { fight_id } = useParams()
+  const [displayUpdate, setDisplayUpdate] = useState(false)
   // console.log(fight_id)
 
   const getReviews = async () => {
@@ -17,6 +19,7 @@ const FightDetails = ({ user }) => {
       `http://localhost:3001/fights/${fight_id}/reviews`
     )
     setReviews(reviews.data)
+    setLoaded(false)
   }
 
   const getUserName = async () => {
@@ -29,6 +32,12 @@ const FightDetails = ({ user }) => {
 
   const deleteReview = async (review) => {
     await Client.delete(`http://localhost:3001/reviews/${review.id}/delete`)
+    setLoaded(true)
+
+  }
+
+  const displayUpdateForm = async () => {
+    setDisplayUpdate(true)
   }
 
   useEffect(() => {
@@ -56,7 +65,13 @@ const FightDetails = ({ user }) => {
             <h3>{review.rating}</h3>
 
             {review.userName === userDetails.userName &&
-              <button className='button' onClick={() => deleteReview(review)}>Delete</button>
+              <div className='userButtons'>
+                <button className='button' onClick={() => deleteReview(review)}>Delete</button>
+                <button onClick={() => displayUpdateForm()}>Update Review</button>
+              </div>
+            }
+            {displayUpdate &&
+              <UpdateReviewForm />
             }
           </div>
         ))}

@@ -39,7 +39,7 @@ function App() {
       checkToken()
     }
   }, [])
-  console.log(user)
+
   return (
     <div className="App">
       <Nav user={user} handleLogout={handleLogout} />

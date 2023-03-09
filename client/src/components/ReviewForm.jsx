@@ -36,7 +36,6 @@ const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
 
     setLoaded(true)
   }
-  console.log(formValues)
 
   useEffect(() => {
     getUserName()

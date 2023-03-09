@@ -9,13 +9,13 @@ const FightDetails = ({ user }) => {
   const [userName, setUserName] = useState('')
   const [loaded, setLoaded] = useState(false)
   let { fight_id } = useParams()
-  // console.log(fight_id)
 
   const getReviews = async () => {
     let reviews = await axios.get(
       `http://localhost:3001/fights/${fight_id}/reviews`
     )
     setReviews(reviews.data)
+    setLoaded(false)
   }
 
   const getUserName = async () => {
@@ -27,13 +27,20 @@ const FightDetails = ({ user }) => {
 
   const deleteReview = async (review) => {
     await Client.delete(`http://localhost:3001/reviews/${review.id}/delete`)
+    setLoaded(true)
   }
 
+  const updateReview = async (e, review) => {
+    e.preventDefault()
+    const res = await Client.put(
+      `http://localhost:3001/reviews/${review.id}/update`
+    )
+  }
   useEffect(() => {
     getReviews()
     getUserName()
+    deleteReview()
   }, [loaded])
-  console.log(reviews)
 
   return user ? (
     <div>
@@ -48,11 +55,13 @@ const FightDetails = ({ user }) => {
         {reviews.map((review) => (
           <div key={review.id}>
             <h3>{review.userName}</h3>
-            <h3>{review.review}</h3>
-            <h3>{review.rating}</h3>
+            <input type="text" value={review.review} />
+            <input type="text" value={review.rating} />
+
             <button className="button" onClick={() => deleteReview(review)}>
               Delete
             </button>
+            <button>Edit</button>
           </div>
         ))}
       </div>

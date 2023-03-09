@@ -46,7 +46,6 @@ function App() {
 
   }, [])
 
-
   return (
     <div className="App">
       <Nav user={user} handleLogout={handleLogout} userDetails={userDetails.data} checkToken={checkToken} />

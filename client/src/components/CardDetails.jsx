@@ -16,13 +16,12 @@ const CardDetails = ({ cards, getCards }) => {
     const resTwo = await axios.get(`http://localhost:3001/cards/${id}/fighters`)
     setFighters(resTwo.data.fightersOnCard)
     setLoaded(true)
-    console.log(fighters)
   }
   useEffect(() => {
     selectCardAndFighters()
   }, [loaded])
   const fights = cards[id - 1].Fights
-
+  // console.log(id)
   return (
     <div>
       <div>

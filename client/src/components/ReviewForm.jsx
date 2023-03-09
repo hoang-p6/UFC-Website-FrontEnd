@@ -6,7 +6,7 @@ const ReviewForm = ({ fight_id, user, userName, getUserName }) => {
   let username = userName
   const initialState = {
     review: '',
-    rating: '',
+    rating: [1],
     userId: user.id,
     userName: '',
     fightId: parseInt(fight_id)

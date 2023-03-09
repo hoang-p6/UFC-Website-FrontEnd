@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = ({ cards }) => {
+  console.log(cards)
   return (
     <div className="Main-Card">
       <h1 className="Title">UFC HUB</h1>

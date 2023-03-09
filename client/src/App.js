@@ -17,8 +17,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [cards, setCards] = useState([])
   const [reviews, setReviews] = useState([])
-
-
+  const [userDetails, setUserDetails] = useState('')
 
   const handleLogout = () => {
     setUser(null)
@@ -36,7 +35,6 @@ function App() {
 
 
 
-
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -46,12 +44,11 @@ function App() {
 
 
 
-
   }, [])
 
   return (
     <div className="App">
-      <Nav user={user} handleLogout={handleLogout} checkToken={checkToken} />
+      <Nav user={user} handleLogout={handleLogout} userDetails={userDetails.data} checkToken={checkToken} />
       <main>
         <Routes>
           <Route path="/" element={<Home cards={cards} />}></Route>

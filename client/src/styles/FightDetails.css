@@ -6,9 +6,11 @@
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+
 .fighterNames {
   font-size: 70px;
 }
+
 .container-grid {
   padding: 2em 0;
   display: grid;
@@ -16,12 +18,14 @@
   grid-gap: 1em;
   justify-content: center;
 }
+
 .fightDetails {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .stats-container {
   display: flex;
   flex-direction: row;
@@ -52,41 +56,49 @@
 .fighter-one-image {
   margin: 10px;
   box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
-  background-image: radial-gradient(
-    circle,
-    #ffd202,
-    #fcc900,
-    #f9c000,
-    #f5b800,
-    #f1af00,
-    #eca000,
-    #e69200,
-    #e08300,
-    #d56a00,
-    #ca5000,
-    #bd3300,
-    #af0000
-  );
+  background-image: radial-gradient(circle,
+      #ffd202,
+      #fcc900,
+      #f9c000,
+      #f5b800,
+      #f1af00,
+      #eca000,
+      #e69200,
+      #e08300,
+      #d56a00,
+      #ca5000,
+      #bd3300,
+      #af0000);
+  object-fit: cover;
+  height: 20em;
+  width: 20em;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
+
 .fighter-two-image {
   margin: 10px;
   box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
-  background-image: radial-gradient(
-    circle,
-    #ffd202,
-    #fcc900,
-    #f9c000,
-    #f5b800,
-    #f1af00,
-    #eca000,
-    #e69200,
-    #e08300,
-    #d56a00,
-    #ca5000,
-    #bd3300,
-    #af0000
-  );
+  background-image: radial-gradient(circle,
+      #ffd202,
+      #fcc900,
+      #f9c000,
+      #f5b800,
+      #f1af00,
+      #eca000,
+      #e69200,
+      #e08300,
+      #d56a00,
+      #ca5000,
+      #bd3300,
+      #af0000);
+  object-fit: cover;
+  height: 20em;
+  width: 20em;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
+
 .fighter-stats {
   /* display: flex;
   flex-direction: column;
@@ -103,14 +115,17 @@
     'ten eleven twelve';
   list-style: none;
 }
+
 .country-one {
   grid-area: one;
   display: flex;
   flex-wrap: wrap;
 }
+
 .country-label {
   grid-area: two;
 }
+
 .country-three {
   grid-area: three;
 }
@@ -118,9 +133,11 @@
 .wins-four {
   grid-area: four;
 }
+
 .wins-label {
   grid-area: five;
 }
+
 .wins-six {
   grid-area: six;
 }
@@ -128,25 +145,32 @@
 .losses-seven {
   grid-area: seven;
 }
+
 .losses-label {
   grid-area: eight;
 }
+
 .losses-nine {
   grid-area: nine;
 }
+
 .draws-ten {
   grid-area: ten;
 }
+
 .draws-label {
   grid-area: eleven;
 }
+
 .draws-twelve {
   grid-area: twelve;
 }
+
 .stats {
   display: flex;
   justify-content: center;
 }
+
 .country {
   display: flex;
   justify-content: space-between;

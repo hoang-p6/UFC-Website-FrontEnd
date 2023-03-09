@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  
+
 }
 
 img {
@@ -12,37 +12,39 @@ img {
 }
 
 body {
-  background-image: radial-gradient(
-    circle,
-    #c2c2c2,
-    #afafaf,
-    #9c9c9c,
-    #8a8a8a,
-    #787878,
-    #6d6d6d,
-    #626262,
-    #575757,
-    #4f4f4f,
-    #484848,
-    #404040,
-    #393939
-  );
+  background-image: radial-gradient(circle,
+      #c2c2c2,
+      #afafaf,
+      #9c9c9c,
+      #8a8a8a,
+      #787878,
+      #6d6d6d,
+      #626262,
+      #575757,
+      #4f4f4f,
+      #484848,
+      #404040,
+      #393939);
   height: 1000px;
 }
+
 .eachFight {
   border: 2px solid black;
 }
+
 .stats-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .fighter-one-stats {
   display: flex;
   flex-direction: column;
   list-style-type: none;
   justify-content: space-between;
 }
+
 .stats-title {
   display: flex;
   flex-direction: column;
@@ -50,16 +52,19 @@ body {
   justify-content: space-between;
   font-size: 30px;
 }
+
 .fighter-two-stats {
   display: flex;
   flex-direction: column;
   list-style-type: none;
   justify-content: space-between;
 }
+
 .fighter-one-image {
   border: 5px solid black;
   box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
 }
+
 .fighter-two-image {
   border: 5px solid black;
   box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
@@ -70,10 +75,11 @@ body {
   border: 2px solid black;
 }
 
-.Title{
+.Title {
   color: goldenrod;
   font-size: 50px;
 }
+
 .Main-Card {
   display: flex;
   align-items: center;
@@ -84,13 +90,14 @@ body {
   margin: 15px;
   padding: 10px;
 }
+
 .Card-main {
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   flex-direction: row;
- 
+
   margin: 15px;
   padding: 10px;
   border-radius: 10px;
@@ -105,12 +112,12 @@ body {
   justify-content: center;
   flex-direction: column;
   line-height: 0.1em;
- 
+
   width: 60em;
   height: 650px;
   border: 3rem;
   border-color: goldenrod;
- 
+
 }
 
 .Card-Title {
@@ -120,6 +127,7 @@ body {
   margin-bottom: 35px;
   color: goldenrod;
 }
+
 .Nav-Bar {
   display: flex;
   align-items: center;
@@ -139,6 +147,7 @@ body {
   text-decoration: none;
   font-size: 20px;
 }
+
 .container-grid {
   padding: 2em 0;
   display: grid;
@@ -146,9 +155,10 @@ body {
   grid-gap: 1em;
   justify-content: center;
 }
-.FullBody{
-  background-color: rgb(101, 107, 112);
 
+.FullBody {
+  background-color: rgb(101, 107, 112);
+}
 
 
 .cardTitle {
@@ -195,4 +205,3 @@ body {
   border: 5px solid goldenrod;
 
 }
-

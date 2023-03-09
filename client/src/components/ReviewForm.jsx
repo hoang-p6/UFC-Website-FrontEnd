@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Client from '../services/api'
 
 const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
   let username = userName
@@ -14,7 +15,6 @@ const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
   const [formValues, setFormValues] = useState(initialState)
 
   const handleChange = (e) => {
-
     setFormValues({
       ...formValues,
       [e.target.id]: e.target.value,
@@ -26,8 +26,8 @@ const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await axios.post(
-      `http://localhost:3001/fights/${fight_id}/addreview`,
+    const res = await Client.post(
+      `http://localhost:3001/reviews/${fight_id}/addreview`,
       formValues
     )
 
@@ -35,7 +35,6 @@ const ReviewForm = ({ fight_id, user, userName, getUserName, setLoaded }) => {
     setFormValues(initialState)
 
     setLoaded(true)
-
   }
   console.log(formValues)
 

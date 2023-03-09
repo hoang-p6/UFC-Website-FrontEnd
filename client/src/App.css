@@ -14,3 +14,47 @@ img {
 .eachFight {
   border: 2px solid black;
 }
+
+
+.cardTitle {
+  font-family: 'Timmana', sans-serif;
+}
+
+.cardDetails {
+  font-family: 'Timmana', sans-serif;
+}
+
+.fightDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(146, 9, 9);
+  border: 10px solid goldenrod;
+  border-radius: 5px;
+  width: 40vw;
+
+}
+
+.fightsAndDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#fullBody {
+  background-image: linear-gradient(to right, #3f3f3f, #5f5e5f, #818081, #a5a3a4, #cbc7c8, #cbc7c8, #cbc7c8, #cbc7c8, #a5a3a4, #818081, #5f5e5f, #3f3f3f);
+}
+
+.eachFight {
+  width: 60vw;
+}
+
+.imageMatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: 5px solid goldenrod;
+}

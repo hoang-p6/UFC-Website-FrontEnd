@@ -19,7 +19,6 @@
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.514);
 
-
 }
 
 .fightDetails {
@@ -55,6 +54,7 @@
 }
 
 .matchup {
+
   display: grid;
   grid-template-columns: 20fr 1fr 20fr;
   /* width: 40vw;
@@ -131,6 +131,7 @@
 .divisionWinner {
   color: black;
 
+
 }
 
 .mainCard {
@@ -162,3 +163,4 @@
   margin-top: 4vh;
 
 }
+

@@ -21,6 +21,7 @@
   justify-content: center;
   align-items: center;
 }
+
 #settings-icon {
   font-size: 30px;
   padding: 0 5px 0 0;
@@ -45,6 +46,13 @@
 }
 .links {
   display: flex;
+
+.link {
+  transition: transform .2s;
+  background-color: rgba(0, 255, 255, 0);
+  text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+  transition: text-decoration-underline 5s;
+
 }
 
 .link {
@@ -52,7 +60,16 @@
   background-color: rgba(0, 255, 255, 0);
 }
 
+
+
 .link:hover {
   background-color: rgba(0, 255, 255, 0);
+  text-decoration: underline;
+  transition: text-decoration-underline 5s;
   transform: scale(1.2);
 }
+
+.ufcHub {
+  display: flex;
+}
+

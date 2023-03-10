@@ -33,7 +33,8 @@ const FightDetails = ({ user }) => {
     let reviews = await axios.get(
       `http://localhost:3001/fights/${fight_id}/reviews`
     )
-    setReviews(reviews.data)
+
+    setReviews((reviews.data).reverse())
     setLoaded(false)
   }
 
@@ -111,6 +112,15 @@ const FightDetails = ({ user }) => {
           <img src={fighterTwo.image} className="fighter-two-image" />
         </div>
       </div>
+      <div className='reviewForm'>
+        <ReviewForm
+          fight_id={fight_id}
+          user={user}
+          userName={userName}
+          getUserName={getUserName}
+          setLoaded={setLoaded}
+        />
+      </div>
       <div className="reviews-section">
         {reviews.map((review) => (
           <div key={review.id}>
@@ -141,13 +151,7 @@ const FightDetails = ({ user }) => {
           </div>
         ))}
       </div>
-      <ReviewForm
-        fight_id={fight_id}
-        user={user}
-        userName={userName}
-        getUserName={getUserName}
-        setLoaded={setLoaded}
-      />
+
     </div>
   ) : (
     <div>

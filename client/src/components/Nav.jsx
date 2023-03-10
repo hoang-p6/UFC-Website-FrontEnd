@@ -32,11 +32,9 @@ const Nav = ({ user, handleLogout, checkToken }) => {
           LOG OUT
         </NavLink>
       </div>
-
       <div className="ufc-hub">
         <h1 className="title">UFC</h1>
         <h1 className="hub">HUB</h1>
-
       </div>
       <div>
         {user.id === 1 && (
@@ -47,16 +45,11 @@ const Nav = ({ user, handleLogout, checkToken }) => {
             <h1 className="admin">ADMIN</h1>
           </NavLink>
         )}
-
-        {
-          user.id != 1 && (
-            <NavLink to="/about" className="Nav-Bar link">
-              ABOUT
-            </NavLink>
-          )
-        }
-
-
+        {user.id != 1 && (
+          <NavLink to="/about" className="Nav-Bar link">
+            About
+          </NavLink>
+        )}
       </div>
     </nav>
   ) : (

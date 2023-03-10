@@ -24,28 +24,35 @@ const Nav = ({ user, handleLogout, checkToken }) => {
 
   return user ? (
     <nav className="Nav-Bar">
-      <NavLink to="/" className="Nav-Bar">
-        Home
-      </NavLink>
-      <NavLink to="/" onClick={handleLogout} className="Nav-Bar">
-        Log Out
-      </NavLink>
-      {user.id === 1 && (
-        <NavLink to="/admincontrols" className="Nav-Bar">
-          Admin Controls
+      <div className='links'>
+        <NavLink to="/" className="Nav-Bar link">
+          Home
         </NavLink>
-      )}
-      {/* <h3>Welcome {userDetails.data.userName}!</h3> */}
+        <NavLink to="/" onClick={handleLogout} className="Nav-Bar link">
+          Log Out
+        </NavLink>
+      </div>
+      <div>
+        <h1>UFC HUB</h1>
+      </div>
+      <div>
+        {user.id === 1 && (
+          <NavLink to="/admincontrols" className="Nav-Bar link">
+            Admin Controls
+          </NavLink>
+        )}
+
+      </div>
     </nav>
   ) : (
     <nav className="Nav-Bar">
-      <NavLink to="/" className="Nav-Bar">
+      <NavLink to="/" className="Nav-Bar link">
         Home
       </NavLink>
-      <NavLink to="/register" className="Nav-Bar">
+      <NavLink to="/register" className="Nav-Bar link">
         Register
       </NavLink>
-      <NavLink to="/login" className="Nav-Bar">
+      <NavLink to="/login" className="Nav-Bar  link">
         Login
       </NavLink>
     </nav>

@@ -123,31 +123,34 @@ const FightDetails = ({ user }) => {
       </div>
       <div className="reviews-section">
         {reviews.map((review) => (
-          <div key={review.id}>
-            <h3>{review.userName}</h3>
-            <h3>{review.review}</h3>
-            <h3>{review.rating}</h3>
+          <div key={review.id} className="review">
+            <h3 className='name'>{review.userName}'s Review</h3>
+            <div className='rr'>
+              <h3 className='thing actualReview'>{review.review}</h3>
+              <h3 className='thing'>Overall Rating: {review.rating}</h3>
 
-            {review.userName === userDetails.userName && !displayUpdate && (
-              <div className="userButtons">
-                <button className="button" onClick={() => deleteReview(review)}>
-                  Delete
-                </button>
-                <button onClick={() => displayUpdateForm(review.id)}>
-                  Update Review
-                </button>
-              </div>
-            )}
-            {displayUpdate && review.id === reviewId && (
-              <UpdateReviewForm
-                userDetails={userDetails}
-                reviews={reviews}
-                reviewId={reviewId}
-                setLoaded={setLoaded}
-                setDisplayUpdate={setDisplayUpdate}
-                review={review.review}
-              />
-            )}
+
+              {review.userName === userDetails.userName && !displayUpdate && (
+                <div className="userButtons">
+                  <button className="reviewButton" onClick={() => deleteReview(review)}>
+                    Delete
+                  </button>
+                  <button onClick={() => displayUpdateForm(review.id)} className="reviewButton">
+                    Update
+                  </button>
+                </div>
+              )}
+              {displayUpdate && review.id === reviewId && (
+                <UpdateReviewForm
+                  userDetails={userDetails}
+                  reviews={reviews}
+                  reviewId={reviewId}
+                  setLoaded={setLoaded}
+                  setDisplayUpdate={setDisplayUpdate}
+                  review={review.review}
+                />
+              )}
+            </div>
           </div>
         ))}
       </div>

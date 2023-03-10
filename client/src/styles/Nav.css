@@ -15,21 +15,23 @@
   justify-content: space-between;
   font-size: 3vh;
 }
+
 .ufc-hub {
   display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
+  gap: 10px;
+  margin-right: 6vw;
 }
 
-#settings-icon {
+/* #settings-icon {
   font-size: 30px;
   padding: 0 5px 0 0;
-}
+} */
+
 .admin {
-  display: flex;
-  justify-content: center;
+  font-size: smaller;
+  padding-top: 20px;
 }
+
 .title {
   color: white;
   font-family: 'Sternbach', sans-serif;
@@ -37,6 +39,7 @@
   font-size: 60px;
   font-style: italic;
 }
+
 .hub {
   color: white;
   font-family: 'Sternbach', sans-serif;
@@ -44,9 +47,11 @@
   font-size: 60px;
   font-style: italic;
 }
+
 .links {
   display: flex;
 }
+
 .link {
   transition: transform 0.2s;
   background-color: rgba(0, 255, 255, 0);
@@ -58,16 +63,19 @@
   transition: transform 0.2s;
   background-color: rgba(0, 255, 255, 0);
 }
+
 #title {
   font-family: 'Sternbach', sans-serif;
   font-family: 'Sternbach Hollow', sans-serif;
   font-size: 80px;
   display: absolute;
 }
+
 #home {
   display: flex;
   flex-grow: 0.52;
 }
+
 #home,
 #logout,
 #admin,
@@ -76,6 +84,7 @@
   text-decoration: overline 0.15em rgba(0, 0, 0, 0);
   transition: text-decoration-color 300ms;
 }
+
 #home:hover,
 #logout:hover,
 #admin:hover,
@@ -95,4 +104,10 @@
 
 .ufcHub {
   display: flex;
+}
+
+.adminControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

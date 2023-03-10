@@ -22,14 +22,14 @@
   margin-right: 6vw;
 }
 
-#settings-icon {
+/* #settings-icon {
   font-size: 30px;
   padding: 0 5px 0 0;
-}
+} */
 
 .admin {
-  display: flex;
-  justify-content: center;
+  font-size: smaller;
+  padding-top: 20px;
 }
 
 .title {
@@ -104,4 +104,10 @@
 
 .ufcHub {
   display: flex;
+}
+
+.adminControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

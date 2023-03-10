@@ -39,10 +39,12 @@ const Nav = ({ user, handleLogout, checkToken }) => {
       <div>
         {user.id === 1 && (
           <NavLink to="/admincontrols" className="Nav-Bar link">
-            <span className="material-symbols-outlined" id="settings-icon">
-              settings_input_component
-            </span>{' '}
-            <h1 className="admin">ADMIN</h1>
+            <div className='adminControls'>
+              <span className="material-symbols-outlined" id="settings-icon">
+                settings_input_component
+              </span>{' '}
+              <h1 className="admin">ADMIN</h1>
+            </div>
           </NavLink>
         )}
         {user.id != 1 && (

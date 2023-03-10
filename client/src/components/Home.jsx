@@ -5,10 +5,9 @@ import '../styles/Home.css'
 const Home = ({ cards }) => {
   console.log(cards)
   return (
-
-    <section className='cardSection'>
-      <div className='welcomeDiv'>
-        <h1 className='welcomeMessage'>Cards</h1>
+    <section className="cardSection">
+      <div className="welcomeDiv">
+        <h1 className="welcomeMessage">EVENTS</h1>
       </div>
       <div className="cards">
         {cards.map((card) => (

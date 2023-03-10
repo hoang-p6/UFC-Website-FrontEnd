@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterUser } from '../services/Auth'
+import '../styles/Forms.css'
 
 const Register = () => {
   let navigate = useNavigate()
@@ -32,55 +33,77 @@ const Register = () => {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="firstName">First Name</label>
-        <input
-          onChange={handleChange}
-          name="firstName"
-          type="text"
-          value={formValues.firstName}
-          required
-        />
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          onChange={handleChange}
-          name="lastName"
-          type="text"
-          value={formValues.lastName}
-          required
-        />
-        <label htmlFor="email">Email</label>
+      <form onSubmit={handleSubmit} className="register-container">
+        <div className="register-name">
+          <label htmlFor="firstName" className="firstName-label">
+            First Name
+          </label>
+          <input
+            onChange={handleChange}
+            name="firstName"
+            type="text"
+            value={formValues.firstName}
+            required
+            className="firstName-input"
+          />
+          <label htmlFor="lastName" className="lastName-label">
+            Last Name
+          </label>
+          <input
+            onChange={handleChange}
+            name="lastName"
+            type="text"
+            value={formValues.lastName}
+            required
+            className="lastName-input"
+          />
+        </div>
+
+        <label htmlFor="email" className="email-label">
+          Email
+        </label>
         <input
           onChange={handleChange}
           name="email"
           type="email"
           value={formValues.email}
           required
+          className="email-input"
         />
-        <label htmlFor="userName">Username</label>
+        <label htmlFor="userName" className="userName-label">
+          Username
+        </label>
         <input
           onChange={handleChange}
           name="userName"
           type="text"
           value={formValues.userName}
           required
+          className="userName-input"
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password" className="password-label">
+          Password
+        </label>
         <input
           onChange={handleChange}
           name="password"
           type="password"
           value={formValues.password}
           required
+          className="password-input"
         />
-        <label htmlFor="confirmPassword">Confirm Password</label>
+        <label htmlFor="confirmPassword" className="confirm-label">
+          Confirm Password
+        </label>
         <input
           onChange={handleChange}
           name="confirmPassword"
           type="password"
           value={formValues.confirmPassword}
           required
+          className="confirm-input"
         />
+
         <button
           disabled={
             !formValues.userName ||

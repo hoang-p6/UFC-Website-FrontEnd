@@ -1,5 +1,4 @@
 .eachFight {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,17 +7,14 @@
   /* border: .5rem solid rgb(146, 9, 9);
   border-radius: 10px;
   background-color: goldenrod; */
-  transition: transform .2s;
-
-
+  transition: transform 0.2s;
 }
 
 .eachFight:hover {
   transform: scale(1.2);
-  border: .5rem rgb(180, 9, 9);
+  border: 0.5rem rgb(180, 9, 9);
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.514);
-
 }
 
 .fightDetails {
@@ -40,7 +36,6 @@
   align-items: center;
   text-decoration: none;
   gap: 10px;
-
 }
 
 .imageMatch {
@@ -52,9 +47,7 @@
 
   gap: 40px;
 }
-
 .matchup {
-
   display: grid;
   grid-template-columns: 20fr 1fr 20fr;
   /* width: 40vw;
@@ -63,9 +56,6 @@
   border: 10px solid goldenrod;
   border-radius: 5px;
   margin-top: 4vh; */
-
-
-
 }
 
 .vs {
@@ -86,25 +76,26 @@
   width: 25em;
   border-radius: 10px;
   margin-bottom: 10px;
-
 }
 
 .fighterPicture {
   margin: 10px;
 
-  background-image: radial-gradient(circle,
-      #ffd202,
-      #fcc900,
-      #f9c000,
-      #f5b800,
-      #f1af00,
-      #eca000,
-      #e69200,
-      #e08300,
-      #d56a00,
-      #ca5000,
-      #bd3300,
-      #af0000);
+  background-image: radial-gradient(
+    circle,
+    #ffd202,
+    #fcc900,
+    #f9c000,
+    #f5b800,
+    #f1af00,
+    #eca000,
+    #e69200,
+    #e08300,
+    #d56a00,
+    #ca5000,
+    #bd3300,
+    #af0000
+  );
   object-fit: cover;
   height: 30vh;
   width: 20vw;
@@ -113,25 +104,17 @@
   box-shadow: grey 5px 5px;
 }
 
-
-
 .fightsOnCard {
   display: flex;
   flex-direction: column;
-
-
 }
 
 .fightsOnCard:hover {
-  gap: 55px
+  gap: 55px;
 }
-
-
 
 .divisionWinner {
   color: black;
-
-
 }
 
 .mainCard {
@@ -140,7 +123,6 @@
 }
 
 .weightWinner {
-
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -148,8 +130,6 @@
   border: 5px solid goldenrod;
   border-radius: 5px; */
   width: 35vw;
-
-
 }
 
 .boutAndNames {
@@ -161,6 +141,4 @@
   border: 10px solid goldenrod;
   border-radius: 5px;
   margin-top: 4vh;
-
 }
-

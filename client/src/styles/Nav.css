@@ -14,20 +14,51 @@
   text-align: left;
   justify-content: space-between;
   font-size: 3vh;
-
+}
+.ufc-hub {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
+#settings-icon {
+  font-size: 30px;
+  padding: 0 5px 0 0;
+}
+.admin {
+  display: flex;
+  justify-content: center;
+}
+.title {
+  color: white;
+  font-family: 'Sternbach', sans-serif;
+  /* font-family: 'Sternbach Hollow', sans-serif; */
+  font-size: 60px;
+  font-style: italic;
+}
+.hub {
+  color: white;
+  font-family: 'Sternbach', sans-serif;
+  font-family: 'Sternbach Hollow', sans-serif;
+  font-size: 60px;
+  font-style: italic;
+}
 .links {
   display: flex;
-}
 
 .link {
   transition: transform .2s;
   background-color: rgba(0, 255, 255, 0);
   text-decoration: underline 0.15em rgba(0, 0, 0, 0);
   transition: text-decoration-underline 5s;
+
 }
 
+.link {
+  transition: transform 0.2s;
+  background-color: rgba(0, 255, 255, 0);
+}
 
 
 
@@ -41,3 +72,4 @@
 .ufcHub {
   display: flex;
 }
+

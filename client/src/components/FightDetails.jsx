@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import ReviewForm from './ReviewForm'
 import UpdateReviewForm from './UpdateReviewForm'
 import Client from '../services/api'
+import { Link } from 'react-router-dom'
 import '../styles/FightDetails.css'
 
 const FightDetails = ({ user }) => {
@@ -153,7 +154,18 @@ const FightDetails = ({ user }) => {
 
     </div>
   ) : (
-    <h1>Gotta be signed In</h1>
+    <div>
+      <h1>Sign in to see fight details and reviews!</h1>
+      <Link to="/login" className="register-login">
+        Sign In
+      </Link>
+      <h1>
+        Don't have an account?{' '}
+        <Link to="/register" className="create-new-account">
+          Create New Account
+        </Link>
+      </h1>
+    </div>
   )
 }
 

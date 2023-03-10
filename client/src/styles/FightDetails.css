@@ -56,19 +56,21 @@
 .fighter-one-image {
   margin: 10px;
   box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
-  background-image: radial-gradient(circle,
-      #ffd202,
-      #fcc900,
-      #f9c000,
-      #f5b800,
-      #f1af00,
-      #eca000,
-      #e69200,
-      #e08300,
-      #d56a00,
-      #ca5000,
-      #bd3300,
-      #af0000);
+  background-image: radial-gradient(
+    circle,
+    #ffd202,
+    #fcc900,
+    #f9c000,
+    #f5b800,
+    #f1af00,
+    #eca000,
+    #e69200,
+    #e08300,
+    #d56a00,
+    #ca5000,
+    #bd3300,
+    #af0000
+  );
   object-fit: cover;
   height: 20em;
   width: 20em;
@@ -79,19 +81,21 @@
 .fighter-two-image {
   margin: 10px;
   box-shadow: 6px 6px 6px 6px rgb(32, 32, 32);
-  background-image: radial-gradient(circle,
-      #ffd202,
-      #fcc900,
-      #f9c000,
-      #f5b800,
-      #f1af00,
-      #eca000,
-      #e69200,
-      #e08300,
-      #d56a00,
-      #ca5000,
-      #bd3300,
-      #af0000);
+  background-image: radial-gradient(
+    circle,
+    #ffd202,
+    #fcc900,
+    #f9c000,
+    #f5b800,
+    #f1af00,
+    #eca000,
+    #e69200,
+    #e08300,
+    #d56a00,
+    #ca5000,
+    #bd3300,
+    #af0000
+  );
   object-fit: cover;
   height: 20em;
   width: 20em;
@@ -178,4 +182,15 @@
   justify-content: space-between;
   font-size: 30px;
   padding: 15px;
+}
+
+.register-login,
+.create-new-account {
+  font-size: 50px;
+  color: goldenrod;
+}
+.register-login:hover,
+.create-new-account:hover {
+  font-size: 60px;
+  color: white;
 }

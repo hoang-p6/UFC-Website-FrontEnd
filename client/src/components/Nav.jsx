@@ -24,6 +24,7 @@ const Nav = ({ user, handleLogout, checkToken }) => {
 
   return user ? (
     <nav className="Nav-Bar">
+
       <div className='links'>
         <NavLink to="/" className="Nav-Bar link">
           Home
@@ -53,6 +54,7 @@ const Nav = ({ user, handleLogout, checkToken }) => {
         Register
       </NavLink>
       <NavLink to="/login" className="Nav-Bar  link">
+
         Login
       </NavLink>
     </nav>

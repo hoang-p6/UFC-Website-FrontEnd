@@ -1,4 +1,5 @@
-import AddFighterForum from "./AddFighterForm"
+import AddFighterForum from './AddFighterForm'
+
 const AdminControls = () => {
   return (
     <div>

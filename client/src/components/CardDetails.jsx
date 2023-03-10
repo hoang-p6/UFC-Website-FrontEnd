@@ -37,31 +37,41 @@ const CardDetails = ({ cards, getCards }) => {
         </div>
       </div>
       <div>
-        <div>
+        <div className='mainCard'>
           <h1>Main Card</h1>
         </div>
         <div className='fightsOnCard'>
           {fighters.map((fightersDetails) => (
             <Link to={`/fightdetails/${fightersDetails[3]}`}>
               <div key={fightersDetails[0].firstName} className="eachFight">
-                <div className='matchup'>
-                  <h1 className='names'>
-                    {fightersDetails[0][0].firstName}{' '}
-                    {fightersDetails[0][0].lastName}
-                  </h1>
-                  <h1 className='vs'>VS</h1>
-                  <h1 className='names'>
-                    {fightersDetails[0][1].firstName}{' '}
-                    {fightersDetails[0][1].lastName}
-                  </h1>
+                <div className='boutAndNames'>
+                  <div className='matchup'>
+                    <div>
+                      <h1 className='names'>
+                        {fightersDetails[0][0].firstName}{' '}
+                        {fightersDetails[0][0].lastName}
+                      </h1>
+                    </div>
+                    <div>
+                      <h1 className='VS'>VS.</h1>
+                    </div>
+                    <div>
+                      <h1 className='names'>
+                        {fightersDetails[0][1].firstName}{' '}
+                        {fightersDetails[0][1].lastName}
+                      </h1>
+                    </div>
+                  </div>
+                  <h2 className='divisionWinner'>{fightersDetails[1]} Bout</h2>
                 </div>
                 <div className='imageMatch'>
                   <img src={fightersDetails[0][0].image} alt="fighterPicture" className='fighterPicture' />
-                  <h1 className='vs'>VS.</h1>
+                  <h1 className='vs'>vs</h1>
                   <img src={fightersDetails[0][1].image} alt="fighterPicture" className='fighterPicture' />
                 </div>
-                <h2 className='divisionWinner'>Division: {fightersDetails[1]}</h2>
-                <h2 className='divisionWinner'>Winner: {fightersDetails[2]}</h2>
+                <div className='weightWinner'>
+                  <h2 className='divisionWinner'>Winner: {fightersDetails[2]}</h2>
+                </div>
                 {/* <h2>Fight Id: {fightersDetails[3]}</h2> */}
                 {/* <h2>Card Id: {fightersDetails[4]}</h2> */}
               </div>

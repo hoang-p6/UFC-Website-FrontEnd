@@ -1,0 +1,14 @@
+/* /////////Register.jsx/////////// */
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.register-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 60%;
+}

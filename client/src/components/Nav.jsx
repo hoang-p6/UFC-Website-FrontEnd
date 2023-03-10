@@ -24,25 +24,30 @@ const Nav = ({ user, handleLogout, checkToken }) => {
 
   return user ? (
     <nav className="Nav-Bar">
-
-      <div className='links'>
+      <div className="links">
         <NavLink to="/" className="Nav-Bar link">
-          Home
+          HOME
         </NavLink>
         <NavLink to="/" onClick={handleLogout} className="Nav-Bar link">
-          Log Out
+          LOG OUT
         </NavLink>
       </div>
-      <div className='ufcHub'>
-        <h1>UFC</h1>
-        <h1>HUB</h1>
+
+      <div className="ufc-hub">
+        <h1 className="title">UFC</h1>
+        <h1 className="hub">HUB</h1>
+
       </div>
       <div>
         {user.id === 1 && (
           <NavLink to="/admincontrols" className="Nav-Bar link">
-            Admin Controls
+            <span className="material-symbols-outlined" id="settings-icon">
+              settings_input_component
+            </span>{' '}
+            <h1 className="admin">ADMIN</h1>
           </NavLink>
         )}
+
         {
           user.id != 1 && (
             <NavLink to="/about" className="Nav-Bar link">
@@ -50,6 +55,7 @@ const Nav = ({ user, handleLogout, checkToken }) => {
             </NavLink>
           )
         }
+
 
       </div>
     </nav>
@@ -62,7 +68,6 @@ const Nav = ({ user, handleLogout, checkToken }) => {
         Register
       </NavLink>
       <NavLink to="/login" className="Nav-Bar  link">
-
         Login
       </NavLink>
     </nav>

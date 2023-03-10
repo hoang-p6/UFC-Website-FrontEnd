@@ -33,8 +33,9 @@ const Nav = ({ user, handleLogout, checkToken }) => {
           Log Out
         </NavLink>
       </div>
-      <div>
-        <h1>UFC HUB</h1>
+      <div className='ufcHub'>
+        <h1>UFC</h1>
+        <h1>HUB</h1>
       </div>
       <div>
         {user.id === 1 && (

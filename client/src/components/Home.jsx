@@ -1,14 +1,18 @@
 import { GetCards } from '../services/CardServices'
-import { useEffect, useState } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Home.css'
 const Home = ({ cards }) => {
   console.log(cards)
   return (
-    <section className="cardSection">
-      <div className="Main-Card">
+
+    <section className='cardSection'>
+      <div className='welcomeDiv'>
+        <h1 className='welcomeMessage'>Cards</h1>
+      </div>
+      <div className="cards">
         {cards.map((card) => (
-          <div className="Card-main" key={card.id}>
+          <div className="cardInfo" key={card.id}>
             <div className="Card-Div">
               <h2 className="Card-Title">{card.title}</h2>
               <Link to={`/cards/${card.id}`}>

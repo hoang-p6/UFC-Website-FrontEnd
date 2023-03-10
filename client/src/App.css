@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-.eachFight {
-  border: 2px solid black;
-  width: 60vw;
-  text-decoration: none;
-}
-
 #fullBody {
   background-image: linear-gradient(
     to right,
@@ -32,4 +26,6 @@
 
 a {
   text-decoration: none;
+
 }
+

@@ -3,12 +3,27 @@
   align-items: center;
   align-content: center;
 
-  height: 2em;
-  margin: 10px 10px 20px 10px;
-  color: goldenrod;
+  background-color: rgb(168, 0, 0);
+  border: 10px white;
+  border-radius: 10px;
+  height: 8vh;
+  padding: 5px;
+  margin: 10px;
+  color: rgb(231, 169, 11);
+
   text-align: left;
   justify-content: space-between;
-  font-size: 30px;
+  font-size: 3vh;
+
+}
+
+.links {
+  display: flex;
+}
+
+.link {
+  transition: transform .2s;
+  background-color: rgba(0, 255, 255, 0);
 }
 #title {
   font-family: 'Sternbach', sans-serif;
@@ -38,6 +53,9 @@
   transition: text-decoration-underline 5s;
 }
 
-/* 
 
- */
+.link:hover {
+  background-color: rgba(0, 255, 255, 0);
+  transform: scale(1.2);
+}
+

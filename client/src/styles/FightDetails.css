@@ -109,17 +109,19 @@
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-areas:
-    ' one two three'
-    ' four five six'
+    'one two three'
+    'four five six'
     'seven eight nine'
     'ten eleven twelve';
   list-style: none;
+
 }
 
 .country-one {
   grid-area: one;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .country-label {

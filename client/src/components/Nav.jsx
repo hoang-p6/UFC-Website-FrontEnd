@@ -32,14 +32,14 @@ const Nav = ({ user, handleLogout, checkToken }) => {
           LOG OUT
         </NavLink>
       </div>
-      <div className="ufc-hub">
+      <NavLink to="/" className="ufc-hub">
         <h1 className="title">UFC</h1>
         <h1 className="hub">HUB</h1>
-      </div>
+      </NavLink>
       <div>
         {user.id === 1 && (
           <NavLink to="/admincontrols" className="Nav-Bar link">
-            <div className='adminControls'>
+            <div className="adminControls">
               <span className="material-symbols-outlined" id="settings-icon">
                 settings_input_component
               </span>{' '}

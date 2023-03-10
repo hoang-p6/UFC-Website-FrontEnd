@@ -24,14 +24,17 @@ const Nav = ({ user, handleLogout, checkToken }) => {
 
   return user ? (
     <nav className="Nav-Bar">
-      <NavLink to="/" className="Nav-Bar">
+      <NavLink to="/" className="Nav-Bar" id="home">
         Home
       </NavLink>
-      <NavLink to="/" onClick={handleLogout} className="Nav-Bar">
+      <NavLink to="/" className="Nav-Bar" id="title">
+        UFC HUB
+      </NavLink>
+      <NavLink to="/" onClick={handleLogout} className="Nav-Bar" id="logout">
         Log Out
       </NavLink>
       {user.id === 1 && (
-        <NavLink to="/admincontrols" className="Nav-Bar">
+        <NavLink to="/admincontrols" className="Nav-Bar" id="admin">
           Admin Controls
         </NavLink>
       )}
@@ -39,13 +42,16 @@ const Nav = ({ user, handleLogout, checkToken }) => {
     </nav>
   ) : (
     <nav className="Nav-Bar">
-      <NavLink to="/" className="Nav-Bar">
+      <NavLink to="/" className="Nav-Bar" id="home">
         Home
       </NavLink>
-      <NavLink to="/register" className="Nav-Bar">
+      <NavLink to="/" className="Nav-Bar" id="title">
+        UFC HUB
+      </NavLink>
+      <NavLink to="/register" className="Nav-Bar" id="register">
         Register
       </NavLink>
-      <NavLink to="/login" className="Nav-Bar">
+      <NavLink to="/login" className="Nav-Bar" id="login">
         Login
       </NavLink>
     </nav>

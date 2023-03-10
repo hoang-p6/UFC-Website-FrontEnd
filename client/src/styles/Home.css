@@ -23,3 +23,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.mainImage {
+  object-fit: cover;
+  height: 20em;
+  width: 20em;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+}

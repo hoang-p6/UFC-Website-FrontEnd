@@ -4,16 +4,40 @@
   align-content: center;
 
   height: 2em;
-  margin: 0;
+  margin: 10px 10px 20px 10px;
   color: goldenrod;
   text-align: left;
   justify-content: space-between;
   font-size: 30px;
 }
-
-.Nav-Link {
-  color: goldenrod;
-  margin: 0px;
-  text-decoration: none;
-  font-size: 20px;
+#title {
+  font-family: 'Sternbach', sans-serif;
+  font-family: 'Sternbach Hollow', sans-serif;
+  font-size: 80px;
+  display: absolute;
 }
+#home {
+  display: flex;
+  flex-grow: 0.52;
+}
+#home,
+#logout,
+#admin,
+#register,
+#login {
+  text-decoration: overline 0.15em rgba(0, 0, 0, 0);
+  transition: text-decoration-color 300ms;
+}
+#home:hover,
+#logout:hover,
+#admin:hover,
+#register:hover,
+#login:hover {
+  color: white;
+  text-decoration: overline;
+  transition: text-decoration-underline 5s;
+}
+
+/* 
+
+ */

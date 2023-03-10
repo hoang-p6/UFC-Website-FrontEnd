@@ -43,6 +43,13 @@ const Nav = ({ user, handleLogout, checkToken }) => {
             Admin Controls
           </NavLink>
         )}
+        {
+          user.id != 1 && (
+            <NavLink to="/about" className="Nav-Bar link">
+              About
+            </NavLink>
+          )
+        }
 
       </div>
     </nav>

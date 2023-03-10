@@ -23,9 +23,10 @@
   font-family: 'Sternbach Hollow', sans-serif; */
   text-decoration: none;
 }
-
+button {
+  font-family: 'Timmana', sans-serif;
+  font-size: 20px;
+}
 a {
   text-decoration: none;
-
 }
-

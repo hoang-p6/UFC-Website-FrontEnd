@@ -32,7 +32,7 @@ const Register = () => {
     navigate('/login')
   }
   return (
-    <div>
+    <div className="register-form">
       <form onSubmit={handleSubmit} className="register-container">
         <div className="register-name">
           <label htmlFor="firstName" className="firstName-label">
@@ -45,6 +45,7 @@ const Register = () => {
             value={formValues.firstName}
             required
             className="firstName-input"
+            placeholder="First Name"
           />
           <label htmlFor="lastName" className="lastName-label">
             Last Name
@@ -56,53 +57,65 @@ const Register = () => {
             value={formValues.lastName}
             required
             className="lastName-input"
+            placeholder="Last Name"
           />
         </div>
-
-        <label htmlFor="email" className="email-label">
-          Email
-        </label>
-        <input
-          onChange={handleChange}
-          name="email"
-          type="email"
-          value={formValues.email}
-          required
-          className="email-input"
-        />
-        <label htmlFor="userName" className="userName-label">
-          Username
-        </label>
-        <input
-          onChange={handleChange}
-          name="userName"
-          type="text"
-          value={formValues.userName}
-          required
-          className="userName-input"
-        />
-        <label htmlFor="password" className="password-label">
-          Password
-        </label>
-        <input
-          onChange={handleChange}
-          name="password"
-          type="password"
-          value={formValues.password}
-          required
-          className="password-input"
-        />
-        <label htmlFor="confirmPassword" className="confirm-label">
-          Confirm Password
-        </label>
-        <input
-          onChange={handleChange}
-          name="confirmPassword"
-          type="password"
-          value={formValues.confirmPassword}
-          required
-          className="confirm-input"
-        />
+        <div className="email-div">
+          <label htmlFor="email" className="email-label">
+            Email
+          </label>
+          <input
+            onChange={handleChange}
+            name="email"
+            type="email"
+            value={formValues.email}
+            required
+            className="email-input"
+            placeholder="Email"
+          />
+        </div>
+        <div className="userName-div">
+          <label htmlFor="userName" className="userName-label">
+            Username
+          </label>
+          <input
+            onChange={handleChange}
+            name="userName"
+            type="text"
+            value={formValues.userName}
+            required
+            className="userName-input"
+            placeholder="Username"
+          />
+        </div>
+        <div className="password-div">
+          <label htmlFor="password" className="password-label">
+            Password
+          </label>
+          <input
+            onChange={handleChange}
+            name="password"
+            type="password"
+            value={formValues.password}
+            required
+            className="password-input"
+            placeholder="Password"
+          />
+        </div>
+        <div className="confirm">
+          <label htmlFor="confirmPassword" className="confirm-label">
+            Confirm Password
+          </label>
+          <input
+            onChange={handleChange}
+            name="confirmPassword"
+            type="password"
+            value={formValues.confirmPassword}
+            required
+            className="confirm-input"
+            placeholder="Confirm Password"
+          />
+        </div>
 
         <button
           disabled={

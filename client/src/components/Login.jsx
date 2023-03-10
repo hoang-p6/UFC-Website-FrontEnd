@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SignInUser } from '../services/Auth'
+import '../styles/Forms.css'
 
 const Login = ({ setUser }) => {
   let navigate = useNavigate()
@@ -22,24 +23,37 @@ const Login = ({ setUser }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          onChange={handleChange}
-          name="email"
-          type="email"
-          value={formValues.email}
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={handleChange}
-          name="password"
-          type="password"
-          value={formValues.password}
-          required
-        />
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className="login-email-div">
+          <label htmlFor="email" className="login-email-label">
+            Email
+          </label>
+          <input
+            onChange={handleChange}
+            name="email"
+            type="email"
+            value={formValues.email}
+            required
+            placeholder="Email"
+            className="login-email-input"
+          />
+        </div>
+
+        <div className="login-password-div">
+          <label htmlFor="password" className="login-password-label">
+            Password
+          </label>
+          <input
+            onChange={handleChange}
+            name="password"
+            type="password"
+            value={formValues.password}
+            required
+            placeholder="Password"
+            className="login-password-input"
+          />
+        </div>
         <button disabled={!formValues.email || !formValues.password}>
           Log In
         </button>

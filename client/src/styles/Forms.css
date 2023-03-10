@@ -1,14 +1,93 @@
 /* /////////Register.jsx/////////// */
-.register-container {
+.register-form {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  font-size: 30px;
 }
-.register-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.register-container {
+  background-color: goldenrod;
 }
 input {
-  width: 60%;
+  padding: 5px;
+}
+.register-name,
+.email-div,
+.userName-div,
+.password-div,
+.confirm-div {
+  margin: 5px;
+}
+.firstName-input,
+.lastName-input,
+.email-input,
+.userName-input,
+.password-input,
+.confirm-input {
+  margin: auto 5px auto 5px;
+  border: 0;
+  background-color: goldenrod;
+  border-bottom: 1px solid #eee;
+}
+/* /////////Login////////// */
+.login-container {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.login-form {
+  background-color: goldenrod;
+}
+
+.login-email-div,
+.login-password-div {
+  margin: 5px;
+}
+.login-email-input,
+.login-password-input {
+  margin: auto 5px auto 5px;
+  border: 0;
+  background-color: goldenrod;
+  border-bottom: 1px solid #eee;
+}
+
+/* ////////Admin////////// */
+.fighter-form-container {
+  display: flex;
+
+  justify-content: center;
+  font-size: 30px;
+}
+
+.addFighterForm {
+  background-color: goldenrod;
+  margin: 10px;
+}
+
+.fighter-first-div,
+.fighter-last-div,
+.fighter-wins-div,
+.fighter-losses-div,
+.fighter-draws-div,
+.fighter-DOB-div,
+.fighter-country-div,
+.fighter-division-div,
+.fighter-image-div {
+  margin: 10px;
+}
+
+.fighter-form-firstName,
+.fighter-form-lastName,
+.fighter-form-wins,
+.fighter-form-losses,
+.fighter-form-draws,
+.fighter-form-DOB,
+.fighter-form-country,
+.fighter-form-division,
+.fighter-form-image {
+  margin: auto 5px auto 15px;
+  border: 0;
+  background-color: goldenrod;
+  border-bottom: 1px solid #eee;
 }

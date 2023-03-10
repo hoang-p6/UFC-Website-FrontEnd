@@ -51,7 +51,7 @@ const Nav = ({ user, handleLogout, checkToken }) => {
         {
           user.id != 1 && (
             <NavLink to="/about" className="Nav-Bar link">
-              About
+              ABOUT
             </NavLink>
           )
         }

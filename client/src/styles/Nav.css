@@ -15,21 +15,23 @@
   justify-content: space-between;
   font-size: 3vh;
 }
+
 .ufc-hub {
   display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
+  gap: 10px;
+  margin-right: 6vw;
 }
 
 #settings-icon {
   font-size: 30px;
   padding: 0 5px 0 0;
 }
+
 .admin {
   display: flex;
   justify-content: center;
 }
+
 .title {
   color: white;
   font-family: 'Sternbach', sans-serif;
@@ -37,6 +39,7 @@
   font-size: 60px;
   font-style: italic;
 }
+
 .hub {
   color: white;
   font-family: 'Sternbach', sans-serif;
@@ -44,8 +47,10 @@
   font-size: 60px;
   font-style: italic;
 }
+
 .links {
   display: flex;
+}
 
 .link {
   transition: transform .2s;
@@ -73,5 +78,3 @@
   display: flex;
 
 }
-
-
